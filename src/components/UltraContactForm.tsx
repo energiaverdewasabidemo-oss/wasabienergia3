@@ -54,6 +54,7 @@ const UltraContactForm = () => {
         supply_type: supplyTypes.join(', ') || 'No especificado',
         client_type: data.clientType,
         to_email: 'energiaverdewasabi@gmail.com'
+        to_email: 'info@wasabitrader.com'
       };
 
       // Reemplaza estos valores con tus credenciales de EmailJS
@@ -76,7 +77,7 @@ const UltraContactForm = () => {
     } catch (error) {
       console.error('Error enviando email:', error);
       // En caso de error, mostrar mensaje alternativo
-      alert('Hubo un error al enviar el formulario. Por favor, contacta directamente a energiaverdewasabi@gmail.com');
+      alert('Hubo un error al enviar el formulario. Por favor, contacta directamente a info@wasabitrader.com');
     } finally {
       setIsSubmitting(false);
     }

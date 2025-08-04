@@ -40,7 +40,7 @@ Tipo de cliente: {{client_type}}
 Responder a: {{reply_to}}
 
 ---
-Enviado automáticamente desde energiaverdewasabi.com
+Enviado automáticamente desde wasabienergia.es
 ```
 
 4. Copia el **Template ID** que se genera

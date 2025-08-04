@@ -128,10 +128,10 @@ const UltraFooter = () => {
                   <Mail className="h-5 w-5 text-[#A8FF00]" />
                 </motion.div>
                 <a 
-                  href="mailto:energiaverdewasabi@gmail.com" 
+                  href="mailto:info@wasabitrader.com" 
                   className="text-gray-300 hover:text-[#A8FF00] transition-colors"
                 >
-                  energiaverdewasabi@gmail.com
+                  info@wasabitrader.com
                 </a>
               </motion.div>
               
@@ -223,7 +223,7 @@ const UltraFooter = () => {
                 © 2024 Energía Verde Wasabi SL - CIF: B42709378
               </p>
               <p className="text-gray-500 mt-2">
-                Comercializadora de energía eléctrica y gas natural registrada
+                Energía eléctrica y gas natural certificados
               </p>
             </motion.div>
             

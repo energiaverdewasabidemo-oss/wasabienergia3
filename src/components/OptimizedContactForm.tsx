@@ -100,7 +100,7 @@ ${data.message || 'Sin mensaje adicional'}
       if (whatsappSent) {
         // También crear enlace mailto como backup
         const emailBody = `
-Nueva consulta desde la web de Energía Verde Wasabi:
+Nueva consulta desde la web de Wasabi Energía:
 
 Nombre: ${data.name}
 Teléfono: ${data.phone}
@@ -110,10 +110,10 @@ Tipo de suministro: ${supplyTypes.join(', ') || 'No especificado'}
 Tipo de cliente: ${data.clientType === 'residencial' ? 'Residencial' : 'Pyme'}
 
 ---
-Enviado desde energiaverdewasabi.com
+Enviado desde wasabienergia.es
         `.trim();
 
-        const mailtoLink = `mailto:energiaverdewasabi@gmail.com?subject=Nueva consulta desde la web - ${data.name}&body=${encodeURIComponent(emailBody)}`;
+        const mailtoLink = `mailto:info@wasabitrader.com?subject=Nueva consulta desde la web - ${data.name}&body=${encodeURIComponent(emailBody)}`;
         
         // Abrir email como backup (en una nueva pestaña para no interferir con WhatsApp)
         setTimeout(() => {
@@ -133,7 +133,7 @@ Enviado desde energiaverdewasabi.com
       
     } catch (error) {
       console.error('Error enviando consulta:', error);
-      setSubmitError('Hubo un error al procesar el formulario. Por favor, inténtalo de nuevo o contacta directamente por WhatsApp al +34 621 50 83 00');
+      setSubmitError('Hubo un error al procesar el formulario. Por favor, inténtalo de nuevo o contacta directamente a info@wasabitrader.com');
     } finally {
       setIsSubmitting(false);
     }
@@ -264,9 +264,9 @@ Enviado desde energiaverdewasabi.com
                 <div className="text-sm text-gray-600 bg-gray-100 p-6 rounded-xl border border-gray-300">
                   <p className="font-semibold mb-3 text-gray-800">📞 Otros métodos de contacto:</p>
                   <div className="flex flex-col sm:flex-row justify-center items-center space-y-3 sm:space-y-0 sm:space-x-8">
-                    <a href="mailto:energiaverdewasabi@gmail.com" className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors">
+                    <a href="mailto:info@wasabitrader.com" className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors">
                       <Mail className="h-5 w-5" />
-                      <span>energiaverdewasabi@gmail.com</span>
+                      <span>info@wasabitrader.com</span>
                     </a>
                     <a href="tel:+34621508300" className="flex items-center space-x-2 text-green-600 hover:text-green-700 transition-colors">
                       <Phone className="h-5 w-5" />

@@ -31,10 +31,10 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-[#A8FF00]" />
                 <a 
-                  href="mailto:energiaverdewasabi@gmail.com" 
+                  href="mailto:info@wasabitrader.com" 
                   className="text-gray-300 hover:text-[#A8FF00] transition-colors text-sm"
                 >
-                  energiaverdewasabi@gmail.com
+                  info@wasabitrader.com
                 </a>
               </div>
               <div className="flex items-center space-x-3">
@@ -96,7 +96,7 @@ const Footer = () => {
                 © 2024 Energía Verde Wasabi SL - CIF: B42709378
               </p>
               <p className="text-gray-500 text-xs mt-1">
-                Comercializadora de energía eléctrica y gas natural registrada
+                Energía eléctrica y gas natural certificados
               </p>
             </div>
             

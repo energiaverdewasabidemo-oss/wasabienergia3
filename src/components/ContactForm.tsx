@@ -49,11 +49,11 @@ Tipo de suministro: ${formData.supplyType.join(', ') || 'No especificado'}
 Tipo de cliente: ${formData.clientType}
 
 ---
-Enviado desde energiaverdewasabi.com
+Enviado desde wasabienergia.es
     `.trim();
 
     // Create mailto link
-    const mailtoLink = `mailto:energiaverdewasabi@gmail.com?subject=Nueva consulta desde la web&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:info@wasabitrader.com?subject=Nueva consulta desde la web&body=${encodeURIComponent(emailBody)}`;
     
     // Open email client
     window.location.href = mailtoLink;
@@ -92,8 +92,8 @@ Enviado desde energiaverdewasabi.com
               </p>
               <p className="text-sm text-gray-500">
                 Si no se abrió automáticamente, puedes escribirnos a:{' '}
-                <a href="mailto:energiaverdewasabi@gmail.com" className="text-[#A8FF00] hover:underline">
-                  energiaverdewasabi@gmail.com
+                <a href="mailto:info@wasabitrader.com" className="text-[#A8FF00] hover:underline">
+                  info@wasabitrader.com
                 </a>
               </p>
             </div>

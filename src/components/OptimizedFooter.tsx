@@ -68,10 +68,10 @@ const OptimizedFooter = () => {
                   <div className="flex-1 min-w-0">
                     <p className="text-gray-300 text-sm mb-1">Email:</p>
                     <a 
-                      href="mailto:energiaverdewasabi@gmail.com" 
+                      href="mailto:info@wasabitrader.com" 
                       className="text-gray-200 hover:text-[#A8FF00] transition-colors text-base font-medium break-all leading-relaxed"
                     >
-                      energiaverdewasabi@gmail.com
+                      info@wasabitrader.com
                     </a>
                   </div>
                 </div>
@@ -146,7 +146,7 @@ const OptimizedFooter = () => {
                 © 2025 Energía Verde Wasabi SL - CIF: B42709378
               </p>
               <p className="text-gray-400 mt-2">
-                Comercializadora de energía eléctrica y gas natural registrada
+                Energía eléctrica y gas natural certificados
               </p>
             </div>
             
