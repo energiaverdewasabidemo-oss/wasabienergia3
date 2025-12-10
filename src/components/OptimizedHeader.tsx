@@ -38,14 +38,14 @@ const OptimizedHeader = () => {
               <div className="relative">
                 {/* Logo directo con efectos sutiles */}
                 <div className="relative p-2 rounded-xl transition-all duration-300 group-hover:scale-110">
-                  <img 
-                    src="/WhatsApp_Image_2025-06-26_at_19.55.53__1_-removebg-preview copy copy.png" 
-                    alt="Energía Verde Wasabi" 
-                    className="h-10 w-auto sm:h-12 lg:h-14 transition-all duration-300 drop-shadow-lg group-hover:drop-shadow-2xl"
+                  <img
+                    src="/WhatsApp_Image_2025-06-26_at_19.55.53__1_-removebg-preview copy copy.png"
+                    alt="Energía Verde Wasabi"
+                    className="h-10 w-auto sm:h-12 lg:h-14 transition-all duration-300"
                     style={{
                       maxWidth: '180px',
                       objectFit: 'contain',
-                      filter: 'contrast(1.4) brightness(1.3) saturate(1.4) drop-shadow(0 0 15px rgba(168, 255, 0, 0.6))'
+                      filter: 'contrast(1.4) brightness(1.3) saturate(1.4)'
                     }}
                   />
                   
