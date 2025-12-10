@@ -548,7 +548,7 @@ const UltraOffer = () => {
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
-                  <div className="text-6xl font-black text-[#A8FF00] mb-4">60€</div>
+                  <div className="text-6xl font-black text-[#A8FF00] mb-4">30% descuento</div>
                   <div className="text-gray-300 text-xl">Premio luz</div>
                 </motion.div>
                 
@@ -565,7 +565,7 @@ const UltraOffer = () => {
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
                 >
-                  <div className="text-6xl font-black text-[#A8FF00] mb-4">60€</div>
+                  <div className="text-6xl font-black text-[#A8FF00] mb-4">30% descuento</div>
                   <div className="text-gray-300 text-xl">Premio gas</div>
                 </motion.div>
                 
