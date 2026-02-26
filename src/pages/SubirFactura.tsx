@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Upload, CheckCircle, FileText, Phone, TrendingDown, ArrowRight, Zap, Shield, Star } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 export default function SubirFactura() {
   const [file, setFile] = useState<File | null>(null);
@@ -7,10 +8,13 @@ export default function SubirFactura() {
     nombre: '',
     telefono: '',
     email: '',
+    codigo_postal: '',
+    cups: '',
     tipoCliente: 'particular'
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -21,11 +25,55 @@ export default function SubirFactura() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      let facturaUrl: string | undefined;
 
-    setIsSubmitted(true);
-    setIsSubmitting(false);
+      if (file) {
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+        const filePath = fileName;
+
+        const { error: uploadError } = await supabase.storage
+          .from('invoices')
+          .upload(filePath, file);
+
+        if (uploadError) {
+          throw new Error(`Error al subir la factura: ${uploadError.message}`);
+        }
+
+        const { data: urlData } = supabase.storage
+          .from('invoices')
+          .getPublicUrl(filePath);
+
+        facturaUrl = urlData.publicUrl;
+      }
+
+      const { error: insertError } = await supabase
+        .from('leads')
+        .insert([
+          {
+            nombre: formData.nombre,
+            telefono: formData.telefono,
+            email: formData.email,
+            codigo_postal: formData.codigo_postal,
+            cups: formData.cups || null,
+            factura_url: facturaUrl,
+          }
+        ]);
+
+      if (insertError) {
+        throw new Error(`Error al guardar los datos: ${insertError.message}`);
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error('Error:', err);
+      setError(err instanceof Error ? err.message : 'Ha ocurrido un error. Por favor, inténtalo de nuevo.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
@@ -431,6 +479,40 @@ export default function SubirFactura() {
                         </div>
                       </div>
 
+                      {/* Código Postal */}
+                      <div>
+                        <label className="block text-white font-bold text-lg mb-3">
+                          Código Postal
+                        </label>
+                        <div className="relative">
+                          <input
+                            type="text"
+                            required
+                            value={formData.codigo_postal}
+                            onChange={(e) => setFormData({ ...formData, codigo_postal: e.target.value })}
+                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
+                            placeholder="28001"
+                          />
+                        </div>
+                      </div>
+
+                      {/* CUPS (opcional) */}
+                      <div>
+                        <label className="block text-white font-bold text-lg mb-3">
+                          CUPS <span className="text-gray-500 text-sm font-normal">(Opcional)</span>
+                        </label>
+                        <div className="relative">
+                          <input
+                            type="text"
+                            value={formData.cups}
+                            onChange={(e) => setFormData({ ...formData, cups: e.target.value })}
+                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
+                            placeholder="ES0021000000000000AA"
+                          />
+                          <p className="text-gray-500 text-xs mt-2">Lo encontrarás en tu factura</p>
+                        </div>
+                      </div>
+
                       {/* Upload de factura mejorado */}
                       <div>
                         <label className="block text-white font-bold text-lg mb-3">
@@ -479,6 +561,13 @@ export default function SubirFactura() {
                           </label>
                         </div>
                       </div>
+
+                      {/* Error message */}
+                      {error && (
+                        <div className="bg-red-500/20 border border-red-500/50 rounded-2xl p-4">
+                          <p className="text-red-400 text-sm">{error}</p>
+                        </div>
+                      )}
 
                       {/* Botón de envío mejorado */}
                       <button
