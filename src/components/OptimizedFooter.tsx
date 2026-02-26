@@ -150,21 +150,22 @@ const OptimizedFooter = () => {
             </div>
           </div>
 
-          {/* Enlaces legales CON RUTAS CORRECTAS */}
+          {/* Enlaces legales y Landing Pages */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-black mb-6 text-[#A8FF00]">Legal</h3>
+            <h3 className="text-2xl font-black mb-6 text-[#A8FF00]">Legal y Recursos</h3>
             <div className="space-y-4">
               {[
-                { name: 'Política de Privacidad', href: '/politica-privacidad.html' },
-                { name: 'Aviso Legal', href: '/aviso-legal.html' },
-                { name: 'Términos y Condiciones', href: '/terminos-condiciones.html' },
-                { name: 'Cookies', href: '/cookies.html' }
+                { name: 'Subir Factura', href: '/subir-factura', external: false },
+                { name: 'Política de Privacidad', href: '/politica-privacidad.html', external: true },
+                { name: 'Aviso Legal', href: '/aviso-legal.html', external: true },
+                { name: 'Términos y Condiciones', href: '/terminos-condiciones.html', external: true },
+                { name: 'Cookies', href: '/cookies.html', external: true }
               ].map((link) => (
-                <a 
+                <a
                   key={link.name}
-                  href={link.href} 
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="block text-gray-200 hover:text-[#A8FF00] transition-all duration-300 hover:translate-x-2 text-base"
                 >
                   {link.name}
