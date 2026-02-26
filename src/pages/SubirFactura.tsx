@@ -236,157 +236,280 @@ export default function SubirFactura() {
           </div>
         </div>
 
-        {/* Formulario */}
-        <div id="formulario" className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border-2 border-[#A8FF00]/40 scroll-mt-20 overflow-hidden">
-          {/* Efectos de brillo en el fondo */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#A8FF00]/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#96E600]/5 rounded-full blur-3xl"></div>
-
-          <div className="relative z-10">
-            <div className="text-center mb-8">
-              <div className="inline-block p-3 bg-[#A8FF00]/20 rounded-2xl mb-4">
-                <Upload className="w-10 h-10 text-[#A8FF00]" />
+        {/* Formulario Moderno */}
+        <div id="formulario" className="relative mb-16 scroll-mt-20">
+          <div className="max-w-5xl mx-auto">
+            {/* Header del formulario */}
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-3xl mb-6 shadow-2xl shadow-[#A8FF00]/50 animate-pulse">
+                <Upload className="w-10 h-10 text-[#1A1A1A]" />
               </div>
-              <h2 className="text-5xl font-black text-white mb-4">
+              <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
                 Sube tu <span className="text-[#A8FF00]">factura ahora</span>
               </h2>
               <p className="text-xl text-gray-300">
-                Análisis gratuito y sin compromiso
+                Análisis gratuito y sin compromiso. Respuesta en menos de 24 horas.
               </p>
             </div>
 
-          <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
-            <div className="space-y-6">
-              <div>
-                <label className="block text-white font-semibold mb-2">
-                  Tipo de cliente
-                </label>
-                <div className="grid grid-cols-2 gap-4">
-                  <button
-                    type="button"
-                    onClick={() => setFormData({ ...formData, tipoCliente: 'particular' })}
-                    className={`p-4 rounded-xl border-2 font-semibold transition-all ${
-                      formData.tipoCliente === 'particular'
-                        ? 'border-[#A8FF00] bg-[#A8FF00]/20 text-[#A8FF00]'
-                        : 'border-gray-600 hover:border-[#A8FF00]/50 text-gray-300'
-                    }`}
-                  >
-                    Particular
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setFormData({ ...formData, tipoCliente: 'empresa' })}
-                    className={`p-4 rounded-xl border-2 font-semibold transition-all ${
-                      formData.tipoCliente === 'empresa'
-                        ? 'border-[#A8FF00] bg-[#A8FF00]/20 text-[#A8FF00]'
-                        : 'border-gray-600 hover:border-[#A8FF00]/50 text-gray-300'
-                    }`}
-                  >
-                    Empresa
-                  </button>
+            {/* Grid de dos columnas: Info + Formulario */}
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+
+              {/* Columna izquierda - Beneficios */}
+              <div className="space-y-6">
+                <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 border border-[#A8FF00]/30">
+                  <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#A8FF00]/20 flex items-center justify-center">
+                      <CheckCircle className="w-6 h-6 text-[#A8FF00]" />
+                    </div>
+                    ¿Por qué con nosotros?
+                  </h3>
+
+                  <div className="space-y-5">
+                    <div className="flex items-start gap-4 group">
+                      <div className="w-8 h-8 rounded-lg bg-[#A8FF00]/10 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#A8FF00]/20 transition-colors">
+                        <Zap className="w-5 h-5 text-[#A8FF00]" />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-bold text-lg mb-1">Análisis experto</h4>
+                        <p className="text-gray-400 leading-relaxed">
+                          Revisamos cada línea de tu factura para encontrar oportunidades de ahorro que otros pasan por alto.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 group">
+                      <div className="w-8 h-8 rounded-lg bg-[#A8FF00]/10 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#A8FF00]/20 transition-colors">
+                        <Shield className="w-5 h-5 text-[#A8FF00]" />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-bold text-lg mb-1">100% Seguro</h4>
+                        <p className="text-gray-400 leading-relaxed">
+                          Tus datos están protegidos y solo los usamos para analizar tu factura. Nunca los compartimos.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 group">
+                      <div className="w-8 h-8 rounded-lg bg-[#A8FF00]/10 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#A8FF00]/20 transition-colors">
+                        <Star className="w-5 h-5 text-[#A8FF00]" />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-bold text-lg mb-1">Sin letra pequeña</h4>
+                        <p className="text-gray-400 leading-relaxed">
+                          Solo te contactamos si encontramos una mejora real. Si no hay ahorro, no te molestamos.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-4 group">
+                      <div className="w-8 h-8 rounded-lg bg-[#A8FF00]/10 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#A8FF00]/20 transition-colors">
+                        <Phone className="w-5 h-5 text-[#A8FF00]" />
+                      </div>
+                      <div>
+                        <h4 className="text-white font-bold text-lg mb-1">Respuesta rápida</h4>
+                        <p className="text-gray-400 leading-relaxed">
+                          Te llamamos en menos de 24 horas con el análisis completo y propuestas concretas.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Trust badge adicional */}
+                <div className="bg-gradient-to-r from-[#A8FF00]/10 to-[#96E600]/10 rounded-2xl p-6 border border-[#A8FF00]/30">
+                  <div className="flex items-center gap-4">
+                    <div className="text-5xl">⚡</div>
+                    <div>
+                      <p className="text-white font-bold text-lg">+10.000 clientes han confiado en nosotros</p>
+                      <p className="text-gray-400">Con un ahorro promedio de 320€/año</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div>
-                <label className="block text-white font-semibold mb-2">
-                  Nombre completo
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={formData.nombre}
-                  onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-600 bg-[#1A1A1A] text-white focus:border-[#A8FF00] focus:outline-none transition-colors placeholder-gray-500"
-                  placeholder="Tu nombre"
-                />
-              </div>
+              {/* Columna derecha - Formulario */}
+              <div className="relative">
+                <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 md:p-10 border-2 border-[#A8FF00]/40 shadow-2xl relative overflow-hidden">
+                  {/* Efectos de brillo */}
+                  <div className="absolute top-0 right-0 w-48 h-48 bg-[#A8FF00]/5 rounded-full blur-3xl"></div>
+                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#96E600]/5 rounded-full blur-3xl"></div>
 
-              <div>
-                <label className="block text-white font-semibold mb-2">
-                  Teléfono
-                </label>
-                <input
-                  type="tel"
-                  required
-                  value={formData.telefono}
-                  onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-600 bg-[#1A1A1A] text-white focus:border-[#A8FF00] focus:outline-none transition-colors placeholder-gray-500"
-                  placeholder="Tu teléfono"
-                />
-              </div>
-
-              <div>
-                <label className="block text-white font-semibold mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-600 bg-[#1A1A1A] text-white focus:border-[#A8FF00] focus:outline-none transition-colors placeholder-gray-500"
-                  placeholder="tu@email.com"
-                />
-              </div>
-
-              <div>
-                <label className="block text-white font-semibold mb-2">
-                  Adjunta tu factura
-                </label>
-                <div className="relative">
-                  <input
-                    type="file"
-                    required
-                    onChange={handleFileChange}
-                    accept=".pdf,.jpg,.jpeg,.png"
-                    className="hidden"
-                    id="file-upload"
-                  />
-                  <label
-                    htmlFor="file-upload"
-                    className="flex items-center justify-center w-full px-4 py-8 rounded-xl border-2 border-dashed border-gray-600 hover:border-[#A8FF00] cursor-pointer transition-all bg-[#1A1A1A]/50 hover:bg-[#A8FF00]/10"
-                  >
-                    {file ? (
-                      <div className="flex items-center gap-3">
-                        <CheckCircle className="w-6 h-6 text-[#A8FF00]" />
-                        <span className="text-white font-medium">{file.name}</span>
+                  <div className="relative z-10">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      {/* Tipo de cliente con íconos */}
+                      <div>
+                        <label className="block text-white font-bold text-lg mb-3">
+                          Tipo de cliente
+                        </label>
+                        <div className="grid grid-cols-2 gap-4">
+                          <button
+                            type="button"
+                            onClick={() => setFormData({ ...formData, tipoCliente: 'particular' })}
+                            className={`group relative p-5 rounded-2xl border-2 font-bold transition-all duration-300 overflow-hidden ${
+                              formData.tipoCliente === 'particular'
+                                ? 'border-[#A8FF00] bg-[#A8FF00]/20 text-[#A8FF00] shadow-lg shadow-[#A8FF00]/20'
+                                : 'border-gray-600 hover:border-[#A8FF00]/50 text-gray-300 hover:bg-[#A8FF00]/5'
+                            }`}
+                          >
+                            {formData.tipoCliente === 'particular' && (
+                              <div className="absolute inset-0 bg-gradient-to-br from-[#A8FF00]/10 to-transparent"></div>
+                            )}
+                            <div className="relative z-10 text-center">
+                              <div className="text-3xl mb-2">👤</div>
+                              <span>Particular</span>
+                            </div>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => setFormData({ ...formData, tipoCliente: 'empresa' })}
+                            className={`group relative p-5 rounded-2xl border-2 font-bold transition-all duration-300 overflow-hidden ${
+                              formData.tipoCliente === 'empresa'
+                                ? 'border-[#A8FF00] bg-[#A8FF00]/20 text-[#A8FF00] shadow-lg shadow-[#A8FF00]/20'
+                                : 'border-gray-600 hover:border-[#A8FF00]/50 text-gray-300 hover:bg-[#A8FF00]/5'
+                            }`}
+                          >
+                            {formData.tipoCliente === 'empresa' && (
+                              <div className="absolute inset-0 bg-gradient-to-br from-[#A8FF00]/10 to-transparent"></div>
+                            )}
+                            <div className="relative z-10 text-center">
+                              <div className="text-3xl mb-2">🏢</div>
+                              <span>Empresa</span>
+                            </div>
+                          </button>
+                        </div>
                       </div>
-                    ) : (
-                      <div className="text-center">
-                        <Upload className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                        <p className="text-gray-300 font-medium">
-                          Haz clic para subir tu factura
-                        </p>
-                        <p className="text-gray-500 text-sm mt-1">
-                          PDF, JPG o PNG (máx. 10MB)
-                        </p>
+
+                      {/* Nombre */}
+                      <div>
+                        <label className="block text-white font-bold text-lg mb-3">
+                          Nombre completo
+                        </label>
+                        <div className="relative">
+                          <input
+                            type="text"
+                            required
+                            value={formData.nombre}
+                            onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
+                            placeholder="Juan Pérez"
+                          />
+                        </div>
                       </div>
-                    )}
-                  </label>
+
+                      {/* Teléfono */}
+                      <div>
+                        <label className="block text-white font-bold text-lg mb-3">
+                          Teléfono
+                        </label>
+                        <div className="relative">
+                          <input
+                            type="tel"
+                            required
+                            value={formData.telefono}
+                            onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
+                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
+                            placeholder="600 123 456"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Email */}
+                      <div>
+                        <label className="block text-white font-bold text-lg mb-3">
+                          Email
+                        </label>
+                        <div className="relative">
+                          <input
+                            type="email"
+                            required
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
+                            placeholder="juan@email.com"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Upload de factura mejorado */}
+                      <div>
+                        <label className="block text-white font-bold text-lg mb-3">
+                          Adjunta tu factura
+                        </label>
+                        <div className="relative">
+                          <input
+                            type="file"
+                            required
+                            onChange={handleFileChange}
+                            accept=".pdf,.jpg,.jpeg,.png"
+                            className="hidden"
+                            id="file-upload"
+                          />
+                          <label
+                            htmlFor="file-upload"
+                            className={`group relative flex items-center justify-center w-full px-6 py-8 rounded-2xl border-2 border-dashed cursor-pointer transition-all duration-300 ${
+                              file
+                                ? 'border-[#A8FF00] bg-[#A8FF00]/10'
+                                : 'border-gray-600 hover:border-[#A8FF00] bg-[#1A1A1A]/50 hover:bg-[#A8FF00]/5'
+                            }`}
+                          >
+                            {file ? (
+                              <div className="flex items-center gap-4">
+                                <div className="w-14 h-14 rounded-2xl bg-[#A8FF00]/20 flex items-center justify-center">
+                                  <CheckCircle className="w-8 h-8 text-[#A8FF00]" />
+                                </div>
+                                <div className="text-left">
+                                  <p className="text-white font-bold text-lg">{file.name}</p>
+                                  <p className="text-[#A8FF00] text-sm">Archivo listo para enviar</p>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="text-center">
+                                <div className="w-16 h-16 rounded-2xl bg-[#A8FF00]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#A8FF00]/20 transition-colors">
+                                  <Upload className="w-8 h-8 text-[#A8FF00] group-hover:scale-110 transition-transform" />
+                                </div>
+                                <p className="text-white font-bold text-lg mb-1">
+                                  Arrastra tu factura o haz clic aquí
+                                </p>
+                                <p className="text-gray-400 text-sm">
+                                  PDF, JPG o PNG · Máx. 10MB
+                                </p>
+                              </div>
+                            )}
+                          </label>
+                        </div>
+                      </div>
+
+                      {/* Botón de envío mejorado */}
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="group relative w-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-5 rounded-2xl text-xl font-black hover:shadow-2xl hover:shadow-[#A8FF00]/60 transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none overflow-hidden mt-8"
+                      >
+                        <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                        {isSubmitting ? (
+                          <span className="flex items-center justify-center gap-3 relative z-10">
+                            <div className="w-6 h-6 border-3 border-[#1A1A1A] border-t-transparent rounded-full animate-spin"></div>
+                            Enviando tu factura...
+                          </span>
+                        ) : (
+                          <span className="flex items-center justify-center gap-3 relative z-10">
+                            <Zap className="w-6 h-6" />
+                            Analizar mi factura gratis
+                            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                          </span>
+                        )}
+                      </button>
+
+                      {/* Footer del formulario */}
+                      <p className="text-center text-gray-400 text-sm mt-4">
+                        Al enviar, aceptas que revisemos tu factura. No spam, lo prometemos.
+                      </p>
+                    </form>
+                  </div>
                 </div>
               </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="group relative w-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-5 rounded-full text-xl font-black hover:shadow-2xl hover:shadow-[#A8FF00]/50 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                {isSubmitting ? (
-                  <span className="flex items-center justify-center gap-2 relative z-10">
-                    <div className="w-6 h-6 border-3 border-[#1A1A1A] border-t-transparent rounded-full animate-spin"></div>
-                    Enviando...
-                  </span>
-                ) : (
-                  <span className="flex items-center justify-center gap-2 relative z-10">
-                    <Upload className="w-6 h-6" />
-                    Enviar mi factura
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                )}
-              </button>
             </div>
-          </form>
           </div>
         </div>
 
@@ -399,7 +522,7 @@ export default function SubirFactura() {
             <div className="text-center mb-10">
               <div className="inline-flex items-center gap-2 bg-[#1A1A1A]/10 px-4 py-2 rounded-full mb-4">
                 <Star className="w-5 h-5 text-yellow-600" />
-                <span className="font-bold">+500 clientes satisfechos</span>
+                <span className="font-bold">+10.000 clientes satisfechos</span>
               </div>
               <h2 className="text-5xl font-black mb-2">
                 Lo que dicen nuestros clientes
