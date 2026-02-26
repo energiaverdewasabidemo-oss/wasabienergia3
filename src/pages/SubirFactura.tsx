@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Upload, CheckCircle, FileText, Phone, TrendingDown, ArrowRight } from 'lucide-react';
+import { Upload, CheckCircle, FileText, Phone, TrendingDown, ArrowRight, Zap, Shield, Star } from 'lucide-react';
 
 export default function SubirFactura() {
   const [file, setFile] = useState<File | null>(null);
@@ -82,29 +82,64 @@ export default function SubirFactura() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A]">
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
+    <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] relative overflow-hidden">
+      {/* Efectos de fondo animados */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 left-10 w-96 h-96 bg-[#A8FF00]/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-[600px] h-[600px] bg-[#A8FF00]/15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+        <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-[#96E600]/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '4s'}} />
+      </div>
 
-        {/* Hero Section */}
+      <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
+
+        {/* Hero Section con más impacto */}
         <div className="text-center mb-16 relative">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#A8FF00]/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#A8FF00]/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+          {/* Badge superior */}
+          <div className="inline-flex items-center gap-2 bg-[#A8FF00]/20 border border-[#A8FF00]/40 rounded-full px-6 py-2 mb-6 backdrop-blur-sm animate-pulse">
+            <Zap className="w-4 h-4 text-[#A8FF00]" />
+            <span className="text-[#A8FF00] font-semibold text-sm">Análisis gratuito en menos de 24h</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight relative z-10">
+
+          <h1 className="text-6xl md:text-7xl font-black text-white mb-6 leading-tight relative z-10">
             ¿Estás pagando de más en tu<br />
-            <span className="text-[#A8FF00]">factura de luz</span>?
+            <span className="text-[#A8FF00] relative inline-block">
+              factura de luz
+              <div className="absolute -bottom-2 left-0 right-0 h-3 bg-[#A8FF00]/20 blur-lg"></div>
+            </span>
+            <span className="text-[#A8FF00]">?</span>
           </h1>
-          <p className="text-2xl text-gray-300 mb-8 max-w-3xl mx-auto relative z-10">
+
+          <p className="text-2xl md:text-3xl text-gray-300 mb-10 max-w-3xl mx-auto relative z-10 font-light">
             Descúbrelo en menos de 24 horas. Sube tu factura y recibe un estudio gratuito sin compromiso.
           </p>
-          <a
-            href="#formulario"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-4 rounded-full text-lg font-bold hover:shadow-lg hover:shadow-[#A8FF00]/30 transition-all duration-300 transform hover:scale-105 relative z-10"
-          >
-            Subir mi factura ahora
-            <ArrowRight className="w-5 h-5" />
-          </a>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+            <a
+              href="#formulario"
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-[#A8FF00]/50 transition-all duration-300 transform hover:scale-110 relative overflow-hidden"
+            >
+              <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+              <Upload className="w-6 h-6 relative z-10" />
+              <span className="relative z-10">Subir mi factura ahora</span>
+              <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+
+          {/* Trust badges */}
+          <div className="flex items-center justify-center gap-8 mt-10">
+            <div className="flex items-center gap-2">
+              <Shield className="w-5 h-5 text-[#A8FF00]" />
+              <span className="text-gray-400 text-sm">100% Seguro</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle className="w-5 h-5 text-[#A8FF00]" />
+              <span className="text-gray-400 text-sm">Sin compromiso</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Star className="w-5 h-5 text-[#A8FF00]" />
+              <span className="text-gray-400 text-sm">Gratis</span>
+            </div>
+          </div>
         </div>
 
         {/* Validación del problema */}
@@ -142,45 +177,58 @@ export default function SubirFactura() {
 
         {/* Cómo funciona */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">
+          <h2 className="text-5xl font-black text-white mb-4 text-center">
             Cómo <span className="text-[#A8FF00]">funciona</span>
           </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative">
-              <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-lg p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00]/60 transition-all duration-300 hover:shadow-[#A8FF00]/20">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-full flex items-center justify-center mb-6">
-                  <span className="text-[#1A1A1A] text-2xl font-bold">1</span>
+          <p className="text-xl text-gray-400 text-center mb-12">Solo 3 pasos simples para empezar a ahorrar</p>
+
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            {/* Líneas conectoras en desktop */}
+            <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-[#A8FF00]/50 via-[#A8FF00]/50 to-[#A8FF00]/50"></div>
+
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-2xl p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00] transition-all duration-500 hover:shadow-[#A8FF00]/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#A8FF00]/50 group-hover:shadow-2xl group-hover:shadow-[#A8FF00]/70 transition-all duration-500 relative">
+                  <span className="text-[#1A1A1A] text-3xl font-black">1</span>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#A8FF00] rounded-full animate-ping"></div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-[#A8FF00] transition-colors">
                   Subes tu factura
                 </h3>
-                <p className="text-gray-300 text-lg">
+                <p className="text-gray-300 text-lg leading-relaxed">
                   Rellena el formulario y adjunta tu última factura de luz. Tarda menos de 2 minutos.
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-lg p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00]/60 transition-all duration-300 hover:shadow-[#A8FF00]/20">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-full flex items-center justify-center mb-6">
-                  <span className="text-[#1A1A1A] text-2xl font-bold">2</span>
+
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-2xl p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00] transition-all duration-500 hover:shadow-[#A8FF00]/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#A8FF00]/50 group-hover:shadow-2xl group-hover:shadow-[#A8FF00]/70 transition-all duration-500 relative">
+                  <span className="text-[#1A1A1A] text-3xl font-black">2</span>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#A8FF00] rounded-full animate-ping" style={{animationDelay: '0.5s'}}></div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-[#A8FF00] transition-colors">
                   Analizamos tu contrato
                 </h3>
-                <p className="text-gray-300 text-lg">
+                <p className="text-gray-300 text-lg leading-relaxed">
                   Nuestro equipo revisa cada detalle y compara con las mejores opciones del mercado.
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-lg p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00]/60 transition-all duration-300 hover:shadow-[#A8FF00]/20">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-full flex items-center justify-center mb-6">
-                  <span className="text-[#1A1A1A] text-2xl font-bold">3</span>
+
+            <div className="relative group">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-2xl p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00] transition-all duration-500 hover:shadow-[#A8FF00]/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="w-20 h-20 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#A8FF00]/50 group-hover:shadow-2xl group-hover:shadow-[#A8FF00]/70 transition-all duration-500 relative">
+                  <span className="text-[#1A1A1A] text-3xl font-black">3</span>
+                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#A8FF00] rounded-full animate-ping" style={{animationDelay: '1s'}}></div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-black text-white mb-4 group-hover:text-[#A8FF00] transition-colors">
                   Te llamamos solo si podemos mejorarlo
                 </h3>
-                <p className="text-gray-300 text-lg">
+                <p className="text-gray-300 text-lg leading-relaxed">
                   Si no hay mejora, no te molestamos. Así de simple.
                 </p>
               </div>
@@ -189,13 +237,23 @@ export default function SubirFactura() {
         </div>
 
         {/* Formulario */}
-        <div id="formulario" className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-[#A8FF00]/30 scroll-mt-20">
-          <h2 className="text-4xl font-bold text-white mb-4 text-center">
-            Sube tu <span className="text-[#A8FF00]">factura ahora</span>
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 text-center">
-            Análisis gratuito y sin compromiso
-          </p>
+        <div id="formulario" className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border-2 border-[#A8FF00]/40 scroll-mt-20 overflow-hidden">
+          {/* Efectos de brillo en el fondo */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-[#A8FF00]/5 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#96E600]/5 rounded-full blur-3xl"></div>
+
+          <div className="relative z-10">
+            <div className="text-center mb-8">
+              <div className="inline-block p-3 bg-[#A8FF00]/20 rounded-2xl mb-4">
+                <Upload className="w-10 h-10 text-[#A8FF00]" />
+              </div>
+              <h2 className="text-5xl font-black text-white mb-4">
+                Sube tu <span className="text-[#A8FF00]">factura ahora</span>
+              </h2>
+              <p className="text-xl text-gray-300">
+                Análisis gratuito y sin compromiso
+              </p>
+            </div>
 
           <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
             <div className="space-y-6">
@@ -311,65 +369,94 @@ export default function SubirFactura() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-4 rounded-full text-lg font-bold hover:shadow-lg hover:shadow-[#A8FF00]/30 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="group relative w-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-5 rounded-full text-xl font-black hover:shadow-2xl hover:shadow-[#A8FF00]/50 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none overflow-hidden"
               >
+                <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
                 {isSubmitting ? (
-                  <span className="flex items-center justify-center gap-2">
-                    <div className="w-5 h-5 border-2 border-[#1A1A1A] border-t-transparent rounded-full animate-spin"></div>
+                  <span className="flex items-center justify-center gap-2 relative z-10">
+                    <div className="w-6 h-6 border-3 border-[#1A1A1A] border-t-transparent rounded-full animate-spin"></div>
                     Enviando...
                   </span>
                 ) : (
-                  'Enviar mi factura'
+                  <span className="flex items-center justify-center gap-2 relative z-10">
+                    <Upload className="w-6 h-6" />
+                    Enviar mi factura
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  </span>
                 )}
               </button>
             </div>
           </form>
+          </div>
         </div>
 
         {/* Prueba social */}
-        <div className="bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 text-[#1A1A1A]">
-          <h2 className="text-4xl font-bold mb-8 text-center">
-            Lo que dicen nuestros <span className="text-[#1A1A1A]">clientes</span>
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-[#1A1A1A]/20 transition-all duration-300">
-              <div className="flex items-center gap-2 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-600 text-xl">★</span>
-                ))}
+        <div className="relative bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 text-[#1A1A1A] overflow-hidden">
+          {/* Efecto de brillo */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+
+          <div className="relative z-10">
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center gap-2 bg-[#1A1A1A]/10 px-4 py-2 rounded-full mb-4">
+                <Star className="w-5 h-5 text-yellow-600" />
+                <span className="font-bold">+500 clientes satisfechos</span>
               </div>
-              <p className="text-[#1A1A1A] mb-4 italic">
-                "Ahorro 45€ al mes sin hacer nada. Solo subí mi factura y ellos se encargaron de todo."
-              </p>
-              <p className="text-[#1A1A1A] font-bold">
-                María González - Particular
-              </p>
+              <h2 className="text-5xl font-black mb-2">
+                Lo que dicen nuestros clientes
+              </h2>
             </div>
-            <div className="bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-[#1A1A1A]/20 transition-all duration-300">
-              <div className="flex items-center gap-2 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-600 text-xl">★</span>
-                ))}
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="group bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-[#1A1A1A]/20 transition-all duration-300 border-2 border-[#1A1A1A]/20 hover:border-[#1A1A1A]/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-600 text-yellow-600" />
+                  ))}
+                </div>
+                <p className="text-[#1A1A1A] mb-6 text-lg italic leading-relaxed">
+                  "Ahorro 45€ al mes sin hacer nada. Solo subí mi factura y ellos se encargaron de todo."
+                </p>
+                <div className="border-t-2 border-[#1A1A1A]/20 pt-4">
+                  <p className="text-[#1A1A1A] font-black text-lg">
+                    María González
+                  </p>
+                  <p className="text-[#1A1A1A]/70 font-semibold">Particular</p>
+                </div>
               </div>
-              <p className="text-[#1A1A1A] mb-4 italic">
-                "En mi empresa estábamos pagando casi el doble. Ahora ahorramos más de 800€ al mes."
-              </p>
-              <p className="text-[#1A1A1A] font-bold">
-                Carlos Martín - Empresa
-              </p>
-            </div>
-            <div className="bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-[#1A1A1A]/20 transition-all duration-300">
-              <div className="flex items-center gap-2 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-600 text-xl">★</span>
-                ))}
+
+              <div className="group bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-[#1A1A1A]/20 transition-all duration-300 border-2 border-[#1A1A1A]/20 hover:border-[#1A1A1A]/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-600 text-yellow-600" />
+                  ))}
+                </div>
+                <p className="text-[#1A1A1A] mb-6 text-lg italic leading-relaxed">
+                  "En mi empresa estábamos pagando casi el doble. Ahora ahorramos más de 800€ al mes."
+                </p>
+                <div className="border-t-2 border-[#1A1A1A]/20 pt-4">
+                  <p className="text-[#1A1A1A] font-black text-lg">
+                    Carlos Martín
+                  </p>
+                  <p className="text-[#1A1A1A]/70 font-semibold">Empresa</p>
+                </div>
               </div>
-              <p className="text-[#1A1A1A] mb-4 italic">
-                "Lo mejor es la tranquilidad. Sé que mi factura está optimizada y no pago de más."
-              </p>
-              <p className="text-[#1A1A1A] font-bold">
-                Ana López - Particular
-              </p>
+
+              <div className="group bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-[#1A1A1A]/20 transition-all duration-300 border-2 border-[#1A1A1A]/20 hover:border-[#1A1A1A]/40 transform hover:scale-105 hover:-translate-y-2">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-yellow-600 text-yellow-600" />
+                  ))}
+                </div>
+                <p className="text-[#1A1A1A] mb-6 text-lg italic leading-relaxed">
+                  "Lo mejor es la tranquilidad. Sé que mi factura está optimizada y no pago de más."
+                </p>
+                <div className="border-t-2 border-[#1A1A1A]/20 pt-4">
+                  <p className="text-[#1A1A1A] font-black text-lg">
+                    Ana López
+                  </p>
+                  <p className="text-[#1A1A1A]/70 font-semibold">Particular</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -389,20 +476,52 @@ export default function SubirFactura() {
         </div>
 
         {/* Cierre final */}
-        <div className="text-center bg-gradient-to-r from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-12 shadow-2xl border border-[#A8FF00]/30">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Sube tu factura y <span className="text-[#A8FF00]">sal de dudas</span> hoy mismo
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Sin compromiso. Sin letra pequeña. Solo te llamamos si podemos ayudarte.
-          </p>
-          <a
-            href="#formulario"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-4 rounded-full text-lg font-bold hover:shadow-lg hover:shadow-[#A8FF00]/30 transition-all duration-300 transform hover:scale-105"
-          >
-            <Upload className="w-5 h-5" />
-            Subir mi factura ahora
-          </a>
+        <div className="relative text-center bg-gradient-to-br from-[#2A2A2A] via-[#1A1A1A] to-[#2A2A2A] rounded-3xl p-12 md:p-16 shadow-2xl border-2 border-[#A8FF00]/40 overflow-hidden">
+          {/* Efectos de fondo */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-10 left-10 w-64 h-64 bg-[#A8FF00]/5 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-10 right-10 w-64 h-64 bg-[#96E600]/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+          </div>
+
+          <div className="relative z-10">
+            <div className="inline-block p-4 bg-[#A8FF00]/20 rounded-2xl mb-6">
+              <Zap className="w-12 h-12 text-[#A8FF00] animate-pulse" />
+            </div>
+
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+              Sube tu factura y <span className="text-[#A8FF00]">sal de dudas</span> hoy mismo
+            </h2>
+
+            <p className="text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
+              Sin compromiso. Sin letra pequeña. Solo te llamamos si podemos ayudarte.
+            </p>
+
+            <a
+              href="#formulario"
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-12 py-6 rounded-full text-2xl font-black hover:shadow-2xl hover:shadow-[#A8FF00]/50 transition-all duration-300 transform hover:scale-110 relative overflow-hidden"
+            >
+              <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+              <Upload className="w-7 h-7 relative z-10" />
+              <span className="relative z-10">Subir mi factura ahora</span>
+              <ArrowRight className="w-7 h-7 relative z-10 group-hover:translate-x-1 transition-transform" />
+            </a>
+
+            {/* Garantías */}
+            <div className="flex flex-wrap items-center justify-center gap-6 mt-10">
+              <div className="flex items-center gap-2 bg-[#2A2A2A]/80 px-4 py-2 rounded-full border border-[#A8FF00]/30">
+                <CheckCircle className="w-5 h-5 text-[#A8FF00]" />
+                <span className="text-gray-300 font-semibold">Respuesta en 24h</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#2A2A2A]/80 px-4 py-2 rounded-full border border-[#A8FF00]/30">
+                <Shield className="w-5 h-5 text-[#A8FF00]" />
+                <span className="text-gray-300 font-semibold">100% Seguro</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#2A2A2A]/80 px-4 py-2 rounded-full border border-[#A8FF00]/30">
+                <Star className="w-5 h-5 text-[#A8FF00]" />
+                <span className="text-gray-300 font-semibold">Totalmente gratis</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Garantía de confianza */}
