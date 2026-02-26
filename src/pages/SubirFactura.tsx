@@ -30,48 +30,48 @@ export default function SubirFactura() {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50 flex items-center justify-center px-4">
+      <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="w-20 h-20 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <CheckCircle className="w-12 h-12 text-white" />
+          <div className="w-20 h-20 bg-[#A8FF00] rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+            <CheckCircle className="w-12 h-12 text-[#1A1A1A]" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-white mb-4">
             ¡Factura recibida con éxito!
           </h1>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             Nuestro equipo está analizando tu factura en este momento.<br />
             Te llamaremos en menos de 24 horas solo si podemos mejorar tu tarifa.
           </p>
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-emerald-100">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+          <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-xl p-8 border border-[#A8FF00]/30">
+            <h2 className="text-2xl font-semibold text-[#A8FF00] mb-4">
               ¿Qué ocurre ahora?
             </h2>
             <div className="space-y-4 text-left">
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-emerald-600 font-semibold">1</span>
+                <div className="w-8 h-8 bg-[#A8FF00]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-[#A8FF00] font-semibold">1</span>
                 </div>
                 <div>
-                  <p className="text-gray-700 font-medium">Análisis detallado</p>
-                  <p className="text-gray-600 text-sm">Revisamos tu contrato actual y comparamos con las mejores opciones del mercado</p>
+                  <p className="text-white font-medium">Análisis detallado</p>
+                  <p className="text-gray-400 text-sm">Revisamos tu contrato actual y comparamos con las mejores opciones del mercado</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-emerald-600 font-semibold">2</span>
+                <div className="w-8 h-8 bg-[#A8FF00]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-[#A8FF00] font-semibold">2</span>
                 </div>
                 <div>
-                  <p className="text-gray-700 font-medium">Identificamos ahorros</p>
-                  <p className="text-gray-600 text-sm">Calculamos exactamente cuánto puedes ahorrar al mes y al año</p>
+                  <p className="text-white font-medium">Identificamos ahorros</p>
+                  <p className="text-gray-400 text-sm">Calculamos exactamente cuánto puedes ahorrar al mes y al año</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="w-8 h-8 bg-emerald-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <span className="text-emerald-600 font-semibold">3</span>
+                <div className="w-8 h-8 bg-[#A8FF00]/20 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-[#A8FF00] font-semibold">3</span>
                 </div>
                 <div>
-                  <p className="text-gray-700 font-medium">Te contactamos</p>
-                  <p className="text-gray-600 text-sm">Si encontramos una mejora, te llamamos. Si no, no te molestamos</p>
+                  <p className="text-white font-medium">Te contactamos</p>
+                  <p className="text-gray-400 text-sm">Si encontramos una mejora, te llamamos. Si no, no te molestamos</p>
                 </div>
               </div>
             </div>
@@ -82,20 +82,25 @@ export default function SubirFactura() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50">
+    <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A]">
       <div className="container mx-auto px-4 py-12 max-w-6xl">
 
         {/* Hero Section */}
-        <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            ¿Estás pagando de más en tu<br />factura de luz?
+        <div className="text-center mb-16 relative">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-1/4 w-64 h-64 bg-[#A8FF00]/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#A8FF00]/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}} />
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight relative z-10">
+            ¿Estás pagando de más en tu<br />
+            <span className="text-[#A8FF00]">factura de luz</span>?
           </h1>
-          <p className="text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-2xl text-gray-300 mb-8 max-w-3xl mx-auto relative z-10">
             Descúbrelo en menos de 24 horas. Sube tu factura y recibe un estudio gratuito sin compromiso.
           </p>
           <a
             href="#formulario"
-            className="inline-flex items-center gap-2 bg-emerald-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-4 rounded-full text-lg font-bold hover:shadow-lg hover:shadow-[#A8FF00]/30 transition-all duration-300 transform hover:scale-105 relative z-10"
           >
             Subir mi factura ahora
             <ArrowRight className="w-5 h-5" />
@@ -103,32 +108,32 @@ export default function SubirFactura() {
         </div>
 
         {/* Validación del problema */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-16 border border-gray-100">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-            La realidad que nadie te cuenta
+        <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-[#A8FF00]/30">
+          <h2 className="text-3xl font-bold text-white mb-6 text-center">
+            La realidad que <span className="text-[#A8FF00]">nadie te cuenta</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <TrendingDown className="w-8 h-8 text-red-600" />
+            <div className="text-center p-6 bg-[#1A1A1A]/50 rounded-2xl border border-[#A8FF00]/20 hover:border-[#A8FF00]/40 transition-all duration-300">
+              <div className="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingDown className="w-8 h-8 text-red-400" />
               </div>
-              <p className="text-gray-700 font-medium mb-2">
+              <p className="text-gray-300 font-medium mb-2">
                 Es posible que estés pagando más que otros consumiendo menos
               </p>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <FileText className="w-8 h-8 text-yellow-600" />
+            <div className="text-center p-6 bg-[#1A1A1A]/50 rounded-2xl border border-[#A8FF00]/20 hover:border-[#A8FF00]/40 transition-all duration-300">
+              <div className="w-16 h-16 bg-yellow-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <FileText className="w-8 h-8 text-yellow-400" />
               </div>
-              <p className="text-gray-700 font-medium mb-2">
+              <p className="text-gray-300 font-medium mb-2">
                 Es posible que no entiendas tu factura y estés pagando conceptos innecesarios
               </p>
             </div>
-            <div className="text-center p-6">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="w-8 h-8 text-orange-600" />
+            <div className="text-center p-6 bg-[#1A1A1A]/50 rounded-2xl border border-[#A8FF00]/20 hover:border-[#A8FF00]/40 transition-all duration-300">
+              <div className="w-16 h-16 bg-orange-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-orange-400" />
               </div>
-              <p className="text-gray-700 font-medium mb-2">
+              <p className="text-gray-300 font-medium mb-2">
                 Es posible que estés en una tarifa antigua sin saberlo
               </p>
             </div>
@@ -137,45 +142,45 @@ export default function SubirFactura() {
 
         {/* Cómo funciona */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            Cómo funciona
+          <h2 className="text-4xl font-bold text-white mb-12 text-center">
+            Cómo <span className="text-[#A8FF00]">funciona</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-lg p-8 h-full border-2 border-emerald-200">
-                <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mb-6">
-                  <span className="text-white text-2xl font-bold">1</span>
+              <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-lg p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00]/60 transition-all duration-300 hover:shadow-[#A8FF00]/20">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-full flex items-center justify-center mb-6">
+                  <span className="text-[#1A1A1A] text-2xl font-bold">1</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   Subes tu factura
                 </h3>
-                <p className="text-gray-600 text-lg">
+                <p className="text-gray-300 text-lg">
                   Rellena el formulario y adjunta tu última factura de luz. Tarda menos de 2 minutos.
                 </p>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-lg p-8 h-full border-2 border-emerald-200">
-                <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mb-6">
-                  <span className="text-white text-2xl font-bold">2</span>
+              <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-lg p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00]/60 transition-all duration-300 hover:shadow-[#A8FF00]/20">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-full flex items-center justify-center mb-6">
+                  <span className="text-[#1A1A1A] text-2xl font-bold">2</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   Analizamos tu contrato
                 </h3>
-                <p className="text-gray-600 text-lg">
+                <p className="text-gray-300 text-lg">
                   Nuestro equipo revisa cada detalle y compara con las mejores opciones del mercado.
                 </p>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-2xl shadow-lg p-8 h-full border-2 border-emerald-200">
-                <div className="w-16 h-16 bg-emerald-500 rounded-full flex items-center justify-center mb-6">
-                  <span className="text-white text-2xl font-bold">3</span>
+              <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl shadow-lg p-8 h-full border-2 border-[#A8FF00]/30 hover:border-[#A8FF00]/60 transition-all duration-300 hover:shadow-[#A8FF00]/20">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-full flex items-center justify-center mb-6">
+                  <span className="text-[#1A1A1A] text-2xl font-bold">3</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-bold text-white mb-4">
                   Te llamamos solo si podemos mejorarlo
                 </h3>
-                <p className="text-gray-600 text-lg">
+                <p className="text-gray-300 text-lg">
                   Si no hay mejora, no te molestamos. Así de simple.
                 </p>
               </div>
@@ -184,18 +189,18 @@ export default function SubirFactura() {
         </div>
 
         {/* Formulario */}
-        <div id="formulario" className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-gray-100 scroll-mt-20">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
-            Sube tu factura ahora
+        <div id="formulario" className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 border border-[#A8FF00]/30 scroll-mt-20">
+          <h2 className="text-4xl font-bold text-white mb-4 text-center">
+            Sube tu <span className="text-[#A8FF00]">factura ahora</span>
           </h2>
-          <p className="text-xl text-gray-600 mb-8 text-center">
+          <p className="text-xl text-gray-300 mb-8 text-center">
             Análisis gratuito y sin compromiso
           </p>
 
           <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
             <div className="space-y-6">
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
+                <label className="block text-white font-semibold mb-2">
                   Tipo de cliente
                 </label>
                 <div className="grid grid-cols-2 gap-4">
@@ -204,8 +209,8 @@ export default function SubirFactura() {
                     onClick={() => setFormData({ ...formData, tipoCliente: 'particular' })}
                     className={`p-4 rounded-xl border-2 font-semibold transition-all ${
                       formData.tipoCliente === 'particular'
-                        ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
-                        : 'border-gray-200 hover:border-emerald-300'
+                        ? 'border-[#A8FF00] bg-[#A8FF00]/20 text-[#A8FF00]'
+                        : 'border-gray-600 hover:border-[#A8FF00]/50 text-gray-300'
                     }`}
                   >
                     Particular
@@ -215,8 +220,8 @@ export default function SubirFactura() {
                     onClick={() => setFormData({ ...formData, tipoCliente: 'empresa' })}
                     className={`p-4 rounded-xl border-2 font-semibold transition-all ${
                       formData.tipoCliente === 'empresa'
-                        ? 'border-emerald-500 bg-emerald-50 text-emerald-700'
-                        : 'border-gray-200 hover:border-emerald-300'
+                        ? 'border-[#A8FF00] bg-[#A8FF00]/20 text-[#A8FF00]'
+                        : 'border-gray-600 hover:border-[#A8FF00]/50 text-gray-300'
                     }`}
                   >
                     Empresa
@@ -225,7 +230,7 @@ export default function SubirFactura() {
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
+                <label className="block text-white font-semibold mb-2">
                   Nombre completo
                 </label>
                 <input
@@ -233,13 +238,13 @@ export default function SubirFactura() {
                   required
                   value={formData.nombre}
                   onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-600 bg-[#1A1A1A] text-white focus:border-[#A8FF00] focus:outline-none transition-colors placeholder-gray-500"
                   placeholder="Tu nombre"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
+                <label className="block text-white font-semibold mb-2">
                   Teléfono
                 </label>
                 <input
@@ -247,13 +252,13 @@ export default function SubirFactura() {
                   required
                   value={formData.telefono}
                   onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-600 bg-[#1A1A1A] text-white focus:border-[#A8FF00] focus:outline-none transition-colors placeholder-gray-500"
                   placeholder="Tu teléfono"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
+                <label className="block text-white font-semibold mb-2">
                   Email
                 </label>
                 <input
@@ -261,13 +266,13 @@ export default function SubirFactura() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-emerald-500 focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-gray-600 bg-[#1A1A1A] text-white focus:border-[#A8FF00] focus:outline-none transition-colors placeholder-gray-500"
                   placeholder="tu@email.com"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-700 font-semibold mb-2">
+                <label className="block text-white font-semibold mb-2">
                   Adjunta tu factura
                 </label>
                 <div className="relative">
@@ -281,20 +286,20 @@ export default function SubirFactura() {
                   />
                   <label
                     htmlFor="file-upload"
-                    className="flex items-center justify-center w-full px-4 py-8 rounded-xl border-2 border-dashed border-gray-300 hover:border-emerald-500 cursor-pointer transition-all bg-gray-50 hover:bg-emerald-50"
+                    className="flex items-center justify-center w-full px-4 py-8 rounded-xl border-2 border-dashed border-gray-600 hover:border-[#A8FF00] cursor-pointer transition-all bg-[#1A1A1A]/50 hover:bg-[#A8FF00]/10"
                   >
                     {file ? (
                       <div className="flex items-center gap-3">
-                        <CheckCircle className="w-6 h-6 text-emerald-500" />
-                        <span className="text-gray-700 font-medium">{file.name}</span>
+                        <CheckCircle className="w-6 h-6 text-[#A8FF00]" />
+                        <span className="text-white font-medium">{file.name}</span>
                       </div>
                     ) : (
                       <div className="text-center">
                         <Upload className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                        <p className="text-gray-600 font-medium">
+                        <p className="text-gray-300 font-medium">
                           Haz clic para subir tu factura
                         </p>
-                        <p className="text-gray-400 text-sm mt-1">
+                        <p className="text-gray-500 text-sm mt-1">
                           PDF, JPG o PNG (máx. 10MB)
                         </p>
                       </div>
@@ -306,11 +311,11 @@ export default function SubirFactura() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-emerald-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                className="w-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-4 rounded-full text-lg font-bold hover:shadow-lg hover:shadow-[#A8FF00]/30 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-2">
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-5 h-5 border-2 border-[#1A1A1A] border-t-transparent rounded-full animate-spin"></div>
                     Enviando...
                   </span>
                 ) : (
@@ -322,47 +327,47 @@ export default function SubirFactura() {
         </div>
 
         {/* Prueba social */}
-        <div className="bg-gradient-to-br from-emerald-500 to-green-600 rounded-3xl shadow-2xl p-8 md:p-12 mb-16 text-white">
+        <div className="bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 text-[#1A1A1A]">
           <h2 className="text-4xl font-bold mb-8 text-center">
-            Lo que dicen nuestros clientes
+            Lo que dicen nuestros <span className="text-[#1A1A1A]">clientes</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+            <div className="bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-[#1A1A1A]/20 transition-all duration-300">
               <div className="flex items-center gap-2 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-300 text-xl">★</span>
+                  <span key={i} className="text-yellow-600 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-white/90 mb-4 italic">
+              <p className="text-[#1A1A1A] mb-4 italic">
                 "Ahorro 45€ al mes sin hacer nada. Solo subí mi factura y ellos se encargaron de todo."
               </p>
-              <p className="text-white font-semibold">
+              <p className="text-[#1A1A1A] font-bold">
                 María González - Particular
               </p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+            <div className="bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-[#1A1A1A]/20 transition-all duration-300">
               <div className="flex items-center gap-2 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-300 text-xl">★</span>
+                  <span key={i} className="text-yellow-600 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-white/90 mb-4 italic">
+              <p className="text-[#1A1A1A] mb-4 italic">
                 "En mi empresa estábamos pagando casi el doble. Ahora ahorramos más de 800€ al mes."
               </p>
-              <p className="text-white font-semibold">
+              <p className="text-[#1A1A1A] font-bold">
                 Carlos Martín - Empresa
               </p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+            <div className="bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-6 hover:bg-[#1A1A1A]/20 transition-all duration-300">
               <div className="flex items-center gap-2 mb-4">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-yellow-300 text-xl">★</span>
+                  <span key={i} className="text-yellow-600 text-xl">★</span>
                 ))}
               </div>
-              <p className="text-white/90 mb-4 italic">
+              <p className="text-[#1A1A1A] mb-4 italic">
                 "Lo mejor es la tranquilidad. Sé que mi factura está optimizada y no pago de más."
               </p>
-              <p className="text-white font-semibold">
+              <p className="text-[#1A1A1A] font-bold">
                 Ana López - Particular
               </p>
             </div>
@@ -370,30 +375,30 @@ export default function SubirFactura() {
         </div>
 
         {/* Oportunidad actual */}
-        <div className="bg-yellow-50 border-2 border-yellow-200 rounded-3xl p-8 md:p-12 mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
-            El mejor momento es ahora
+        <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/30 rounded-3xl p-8 md:p-12 mb-16">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">
+            El mejor momento es <span className="text-[#A8FF00]">ahora</span>
           </h2>
-          <p className="text-xl text-gray-700 text-center max-w-3xl mx-auto mb-6">
+          <p className="text-xl text-gray-300 text-center max-w-3xl mx-auto mb-6">
             El mercado energético está en constante cambio. Cuando los precios están favorables, es cuando debes actuar.
             El mejor momento para revisar tu contrato no es cuando vuelve a subir.
           </p>
-          <p className="text-2xl font-bold text-emerald-600 text-center">
+          <p className="text-2xl font-bold text-[#A8FF00] text-center">
             Es ahora.
           </p>
         </div>
 
         {/* Cierre final */}
-        <div className="text-center bg-gradient-to-r from-gray-900 to-gray-800 rounded-3xl p-12 shadow-2xl">
+        <div className="text-center bg-gradient-to-r from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-12 shadow-2xl border border-[#A8FF00]/30">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Sube tu factura y sal de dudas hoy mismo
+            Sube tu factura y <span className="text-[#A8FF00]">sal de dudas</span> hoy mismo
           </h2>
           <p className="text-xl text-gray-300 mb-8">
             Sin compromiso. Sin letra pequeña. Solo te llamamos si podemos ayudarte.
           </p>
           <a
             href="#formulario"
-            className="inline-flex items-center gap-2 bg-emerald-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-emerald-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-4 rounded-full text-lg font-bold hover:shadow-lg hover:shadow-[#A8FF00]/30 transition-all duration-300 transform hover:scale-105"
           >
             <Upload className="w-5 h-5" />
             Subir mi factura ahora
@@ -402,13 +407,13 @@ export default function SubirFactura() {
 
         {/* Garantía de confianza */}
         <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-4 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
-            <Phone className="w-8 h-8 text-emerald-500" />
+          <div className="inline-flex items-center gap-4 bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl p-6 shadow-lg border border-[#A8FF00]/30">
+            <Phone className="w-8 h-8 text-[#A8FF00]" />
             <div className="text-left">
-              <p className="font-semibold text-gray-900">
+              <p className="font-semibold text-white">
                 Llevamos años analizando facturas energéticas
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-400">
                 Sabemos dónde están los errores y cómo optimizar cada contrato
               </p>
             </div>
