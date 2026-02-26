@@ -1,4 +1,5 @@
 import React, { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import OptimizedHeader from './components/OptimizedHeader';
 import OptimizedHero from './components/OptimizedHero';
 
@@ -9,6 +10,7 @@ const OptimizedHowItWorks = lazy(() => import('./components/OptimizedHowItWorks'
 const OptimizedTestimonials = lazy(() => import('./components/OptimizedTestimonials'));
 const OptimizedContactForm = lazy(() => import('./components/OptimizedContactForm'));
 const OptimizedFooter = lazy(() => import('./components/OptimizedFooter'));
+const SubirFactura = lazy(() => import('./pages/SubirFactura'));
 
 // Loading component optimizado
 const LoadingSpinner = () => (
@@ -17,40 +19,54 @@ const LoadingSpinner = () => (
   </div>
 );
 
+const HomePage = () => (
+  <>
+    <OptimizedHeader />
+
+    <main>
+      <OptimizedHero />
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <OptimizedBenefits />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <OptimizedOffer />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <OptimizedHowItWorks />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <OptimizedTestimonials />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <OptimizedContactForm />
+      </Suspense>
+    </main>
+
+    <Suspense fallback={<LoadingSpinner />}>
+      <OptimizedFooter />
+    </Suspense>
+  </>
+);
+
 function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] overflow-x-hidden">
-      {/* Header y Hero se cargan inmediatamente (above the fold) */}
-      <OptimizedHeader />
-      
-      <main>
-        <OptimizedHero />
-        
-        {/* Componentes lazy loaded con Suspense */}
-        <Suspense fallback={<LoadingSpinner />}>
-          <OptimizedBenefits />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <OptimizedOffer />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <OptimizedHowItWorks />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <OptimizedTestimonials />
-        </Suspense>
-        
-        <Suspense fallback={<LoadingSpinner />}>
-          <OptimizedContactForm />
-        </Suspense>
-      </main>
-      
-      <Suspense fallback={<LoadingSpinner />}>
-        <OptimizedFooter />
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/subir-factura"
+          element={
+            <Suspense fallback={<LoadingSpinner />}>
+              <SubirFactura />
+            </Suspense>
+          }
+        />
+      </Routes>
     </div>
   );
 }
