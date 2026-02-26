@@ -513,72 +513,169 @@ export default function SubirFactura() {
           </div>
         </div>
 
-        {/* Prueba social */}
-        <div className="relative bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-3xl shadow-2xl p-8 md:p-12 mb-16 text-[#1A1A1A] overflow-hidden">
-          {/* Efecto de brillo */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        {/* Testimonios Premium */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#A8FF00]/20 to-[#96E600]/20 border border-[#A8FF00]/40 rounded-full px-6 py-3 mb-6 backdrop-blur-sm">
+              <Star className="w-6 h-6 text-[#A8FF00] fill-[#A8FF00]" />
+              <span className="text-[#A8FF00] font-black text-lg">+10.000 clientes satisfechos</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
+              Lo que dicen <span className="text-[#A8FF00]">nuestros clientes</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              Miles de personas ya están ahorrando en su factura de luz
+            </p>
+          </div>
 
-          <div className="relative z-10">
-            <div className="text-center mb-10">
-              <div className="inline-flex items-center gap-2 bg-[#1A1A1A]/10 px-4 py-2 rounded-full mb-4">
-                <Star className="w-5 h-5 text-yellow-600" />
-                <span className="font-bold">+10.000 clientes satisfechos</span>
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {/* Testimonio 1 */}
+            <div className="group relative">
+              {/* Glow effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+
+              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 border-2 border-[#A8FF00]/20 group-hover:border-[#A8FF00]/60 transition-all duration-300 h-full flex flex-col">
+                {/* Quote icon */}
+                <div className="text-[#A8FF00]/30 text-6xl font-serif mb-4 leading-none">"</div>
+
+                {/* Stars */}
+                <div className="flex items-center gap-1 mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className="relative">
+                      <Star className="w-6 h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Testimonial text */}
+                <p className="text-gray-300 text-lg leading-relaxed mb-6 flex-grow">
+                  Ahorro <span className="text-[#A8FF00] font-bold">45€ al mes</span> sin hacer nada. Solo subí mi factura y ellos se encargaron de todo.
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-4 pt-6 border-t border-[#A8FF00]/20">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A8FF00] to-[#96E600] flex items-center justify-center text-[#1A1A1A] font-black text-xl shadow-lg shadow-[#A8FF00]/30">
+                    M
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg">María González</p>
+                    <p className="text-gray-400 text-sm">Particular · Madrid</p>
+                  </div>
+                </div>
+
+                {/* Badge de ahorro */}
+                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
+                  <p className="text-[#1A1A1A] font-black text-sm">540€/año</p>
+                </div>
               </div>
-              <h2 className="text-5xl font-black mb-2">
-                Lo que dicen nuestros clientes
-              </h2>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="group bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-[#1A1A1A]/20 transition-all duration-300 border-2 border-[#1A1A1A]/20 hover:border-[#1A1A1A]/40 transform hover:scale-105 hover:-translate-y-2">
-                <div className="flex items-center gap-1 mb-4">
+            {/* Testimonio 2 - Destacado */}
+            <div className="group relative md:-translate-y-4">
+              {/* Glow effect más fuerte */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-500 animate-pulse"></div>
+
+              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 border-2 border-[#A8FF00]/60 group-hover:border-[#A8FF00] transition-all duration-300 h-full flex flex-col shadow-2xl shadow-[#A8FF00]/20">
+                {/* Quote icon */}
+                <div className="text-[#A8FF00]/30 text-6xl font-serif mb-4 leading-none">"</div>
+
+                {/* Stars */}
+                <div className="flex items-center gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-600 text-yellow-600" />
+                    <div key={i} className="relative">
+                      <Star className="w-6 h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
+                    </div>
                   ))}
                 </div>
-                <p className="text-[#1A1A1A] mb-6 text-lg italic leading-relaxed">
-                  "Ahorro 45€ al mes sin hacer nada. Solo subí mi factura y ellos se encargaron de todo."
+
+                {/* Testimonial text */}
+                <p className="text-gray-300 text-lg leading-relaxed mb-6 flex-grow">
+                  En mi empresa estábamos pagando casi el doble. Ahora ahorramos <span className="text-[#A8FF00] font-bold">más de 800€ al mes</span>.
                 </p>
-                <div className="border-t-2 border-[#1A1A1A]/20 pt-4">
-                  <p className="text-[#1A1A1A] font-black text-lg">
-                    María González
-                  </p>
-                  <p className="text-[#1A1A1A]/70 font-semibold">Particular</p>
+
+                {/* Author */}
+                <div className="flex items-center gap-4 pt-6 border-t border-[#A8FF00]/20">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A8FF00] to-[#96E600] flex items-center justify-center text-[#1A1A1A] font-black text-xl shadow-lg shadow-[#A8FF00]/30">
+                    C
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg">Carlos Martín</p>
+                    <p className="text-gray-400 text-sm">Empresa · Barcelona</p>
+                  </div>
+                </div>
+
+                {/* Badge de ahorro */}
+                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
+                  <p className="text-[#1A1A1A] font-black text-sm">9.600€/año</p>
+                </div>
+
+                {/* Badge "Más popular" */}
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#A8FF00] text-[#1A1A1A] px-4 py-1 rounded-full text-xs font-black uppercase">
+                  Caso destacado
                 </div>
               </div>
+            </div>
 
-              <div className="group bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-[#1A1A1A]/20 transition-all duration-300 border-2 border-[#1A1A1A]/20 hover:border-[#1A1A1A]/40 transform hover:scale-105 hover:-translate-y-2">
-                <div className="flex items-center gap-1 mb-4">
+            {/* Testimonio 3 */}
+            <div className="group relative">
+              {/* Glow effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
+
+              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 border-2 border-[#A8FF00]/20 group-hover:border-[#A8FF00]/60 transition-all duration-300 h-full flex flex-col">
+                {/* Quote icon */}
+                <div className="text-[#A8FF00]/30 text-6xl font-serif mb-4 leading-none">"</div>
+
+                {/* Stars */}
+                <div className="flex items-center gap-1 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-600 text-yellow-600" />
+                    <div key={i} className="relative">
+                      <Star className="w-6 h-6 fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
+                    </div>
                   ))}
                 </div>
-                <p className="text-[#1A1A1A] mb-6 text-lg italic leading-relaxed">
-                  "En mi empresa estábamos pagando casi el doble. Ahora ahorramos más de 800€ al mes."
+
+                {/* Testimonial text */}
+                <p className="text-gray-300 text-lg leading-relaxed mb-6 flex-grow">
+                  Lo mejor es la tranquilidad. Sé que mi factura está optimizada y no pago de más.
                 </p>
-                <div className="border-t-2 border-[#1A1A1A]/20 pt-4">
-                  <p className="text-[#1A1A1A] font-black text-lg">
-                    Carlos Martín
-                  </p>
-                  <p className="text-[#1A1A1A]/70 font-semibold">Empresa</p>
+
+                {/* Author */}
+                <div className="flex items-center gap-4 pt-6 border-t border-[#A8FF00]/20">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#A8FF00] to-[#96E600] flex items-center justify-center text-[#1A1A1A] font-black text-xl shadow-lg shadow-[#A8FF00]/30">
+                    A
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg">Ana López</p>
+                    <p className="text-gray-400 text-sm">Particular · Valencia</p>
+                  </div>
+                </div>
+
+                {/* Badge verificado */}
+                <div className="absolute -top-3 -right-3 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-full p-2 shadow-xl shadow-[#A8FF00]/40">
+                  <CheckCircle className="w-6 h-6 text-[#1A1A1A]" />
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div className="group bg-[#1A1A1A]/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-[#1A1A1A]/20 transition-all duration-300 border-2 border-[#1A1A1A]/20 hover:border-[#1A1A1A]/40 transform hover:scale-105 hover:-translate-y-2">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-600 text-yellow-600" />
-                  ))}
-                </div>
-                <p className="text-[#1A1A1A] mb-6 text-lg italic leading-relaxed">
-                  "Lo mejor es la tranquilidad. Sé que mi factura está optimizada y no pago de más."
-                </p>
-                <div className="border-t-2 border-[#1A1A1A]/20 pt-4">
-                  <p className="text-[#1A1A1A] font-black text-lg">
-                    Ana López
-                  </p>
-                  <p className="text-[#1A1A1A]/70 font-semibold">Particular</p>
-                </div>
+          {/* Stats bar */}
+          <div className="mt-12 bg-gradient-to-r from-[#2A2A2A] via-[#1A1A1A] to-[#2A2A2A] rounded-2xl p-8 border border-[#A8FF00]/30">
+            <div className="grid md:grid-cols-4 gap-8 text-center">
+              <div>
+                <p className="text-4xl font-black text-[#A8FF00] mb-2">10K+</p>
+                <p className="text-gray-400 font-semibold">Clientes satisfechos</p>
+              </div>
+              <div>
+                <p className="text-4xl font-black text-[#A8FF00] mb-2">320€</p>
+                <p className="text-gray-400 font-semibold">Ahorro medio/año</p>
+              </div>
+              <div>
+                <p className="text-4xl font-black text-[#A8FF00] mb-2">24h</p>
+                <p className="text-gray-400 font-semibold">Tiempo de respuesta</p>
+              </div>
+              <div>
+                <p className="text-4xl font-black text-[#A8FF00] mb-2">98%</p>
+                <p className="text-gray-400 font-semibold">Tasa de satisfacción</p>
               </div>
             </div>
           </div>
