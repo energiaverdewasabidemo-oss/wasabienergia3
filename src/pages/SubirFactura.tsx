@@ -157,9 +157,17 @@ export default function SubirFactura() {
             <span className="text-[#A8FF00]">?</span>
           </h1>
 
-          <p className="text-2xl md:text-3xl text-gray-300 mb-10 max-w-3xl mx-auto relative z-10 font-light">
+          <p className="text-2xl md:text-3xl text-gray-300 mb-4 max-w-3xl mx-auto relative z-10 font-light">
             Descúbrelo en menos de 24 horas. Sube tu factura y recibe un estudio gratuito sin compromiso.
           </p>
+
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-[#A8FF00]/20 to-[#96E600]/20 border-2 border-[#A8FF00] rounded-2xl px-8 py-4 mb-10">
+            <TrendingDown className="w-8 h-8 text-[#A8FF00]" />
+            <div className="text-left">
+              <p className="text-white font-black text-2xl">Ahorra hasta 450€/año</p>
+              <p className="text-[#A8FF00] text-sm font-semibold">Solo con subir tu factura ahora</p>
+            </div>
+          </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <a
@@ -188,6 +196,21 @@ export default function SubirFactura() {
               <span className="text-gray-400 text-sm">Gratis</span>
             </div>
           </div>
+        </div>
+
+        {/* Urgencia - Por qué ahora */}
+        <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border-2 border-orange-500/50 rounded-3xl p-8 mb-16 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Zap className="w-8 h-8 text-orange-400 animate-pulse" />
+            <h3 className="text-3xl font-black text-white">¿Por qué hacerlo AHORA?</h3>
+            <Zap className="w-8 h-8 text-orange-400 animate-pulse" />
+          </div>
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-4">
+            <span className="text-orange-400 font-bold">Estamos en el mejor momento del año</span> para cambiar de tarifa y cerrar contratos más baratos.
+          </p>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            Las compañías eléctricas están lanzando ofertas agresivas. Cada día que esperas es dinero que pierdes.
+          </p>
         </div>
 
         {/* Validación del problema */}
@@ -219,6 +242,38 @@ export default function SubirFactura() {
               <p className="text-gray-300 font-medium mb-2">
                 Es posible que estés en una tarifa antigua sin saberlo
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Sección de Autoridad - Barra de progreso */}
+        <div className="bg-gradient-to-br from-[#A8FF00]/10 to-[#96E600]/10 border-2 border-[#A8FF00]/40 rounded-3xl p-10 mb-16 text-center">
+          <h3 className="text-4xl font-black text-white mb-8">
+            Somos una de las asesorías energéticas que <span className="text-[#A8FF00]">más dinero ha ahorrado</span> a españoles
+          </h3>
+
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-white font-bold text-lg">Ahorro total generado</span>
+              <span className="text-[#A8FF00] font-black text-2xl">10.000.000€</span>
+            </div>
+            <div className="h-6 bg-[#1A1A1A] rounded-full overflow-hidden border-2 border-[#A8FF00]/30">
+              <div className="h-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-full animate-pulse" style={{width: '85%'}}></div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/30">
+              <p className="text-[#A8FF00] font-black text-4xl mb-2">+15.000</p>
+              <p className="text-gray-300 font-semibold">Clientes satisfechos</p>
+            </div>
+            <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/30">
+              <p className="text-[#A8FF00] font-black text-4xl mb-2">450€</p>
+              <p className="text-gray-300 font-semibold">Ahorro medio anual</p>
+            </div>
+            <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/30">
+              <p className="text-[#A8FF00] font-black text-4xl mb-2">97%</p>
+              <p className="text-gray-300 font-semibold">Tasa de satisfacción</p>
             </div>
           </div>
         </div>
@@ -279,6 +334,59 @@ export default function SubirFactura() {
                 <p className="text-gray-300 text-lg leading-relaxed">
                   Si no hay mejora, no te molestamos. Así de simple.
                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Enemigo Común */}
+        <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-10 mb-16 border-2 border-[#A8FF00]/40 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-red-500/20 rounded-full mb-6">
+            <span className="text-4xl">🚫</span>
+          </div>
+          <h3 className="text-4xl font-black text-white mb-6">
+            <span className="text-red-400">NO somos</span> los típicos pesados que te llaman constantemente
+          </h3>
+          <div className="max-w-3xl mx-auto space-y-4">
+            <p className="text-xl text-gray-300">
+              <span className="text-[#A8FF00] font-bold">Nuestra metodología es diferente.</span> No somos los vendedores de luz de turno que te acosan sin parar.
+            </p>
+            <p className="text-lg text-gray-400">
+              Te contactamos una sola vez, con un análisis real. Si podemos ahorrarte dinero, te lo contamos. Si no, no te molestamos más. Así de simple y transparente.
+            </p>
+          </div>
+        </div>
+
+        {/* Metodología - Objeto Brillante */}
+        <div className="bg-gradient-to-br from-[#A8FF00]/5 to-[#96E600]/5 rounded-3xl p-10 mb-16 border border-[#A8FF00]/30">
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#A8FF00] rounded-full mb-6">
+              <span className="text-4xl">🎯</span>
+            </div>
+            <h3 className="text-4xl font-black text-white mb-4">
+              Nuestra <span className="text-[#A8FF00]">metodología de análisis</span>
+            </h3>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-xl text-gray-300 text-center mb-8">
+              Basada en más de <span className="text-[#A8FF00] font-bold">200.000 contratos revisados</span> y herramientas de inteligencia artificial
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/20">
+                <h4 className="text-[#A8FF00] font-black text-xl mb-3">✓ Análisis predictivo con IA</h4>
+                <p className="text-gray-400">Comparamos tu factura con miles de tarifas en tiempo real para encontrar la mejor opción.</p>
+              </div>
+              <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/20">
+                <h4 className="text-[#A8FF00] font-black text-xl mb-3">✓ Base de datos actualizada</h4>
+                <p className="text-gray-400">Acceso a todas las ofertas del mercado, incluyendo las que no se publicitan.</p>
+              </div>
+              <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/20">
+                <h4 className="text-[#A8FF00] font-black text-xl mb-3">✓ Análisis de consumo</h4>
+                <p className="text-gray-400">Estudiamos tu patrón de consumo para optimizar al máximo tu ahorro.</p>
+              </div>
+              <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/20">
+                <h4 className="text-[#A8FF00] font-black text-xl mb-3">✓ 92% de éxito</h4>
+                <p className="text-gray-400">En más del 92% de casos encontramos ahorros significativos.</p>
               </div>
             </div>
           </div>
@@ -602,6 +710,46 @@ export default function SubirFactura() {
           </div>
         </div>
 
+        {/* Nuestro Equipo de Asesores */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
+              Conoce a <span className="text-[#A8FF00]">nuestros asesores energéticos</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Profesionales certificados que te ayudarán sin coste a maximizar tu ahorro
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
+            {[
+              { name: 'José Galero', role: 'Asesor Senior', emoji: '👨‍💼' },
+              { name: 'Franco Tenaglia', role: 'Director Comercial', emoji: '👔' },
+              { name: 'Carlos Martín', role: 'Especialista en Ahorro', emoji: '💡' },
+              { name: 'Ana Rodríguez', role: 'Asesora Energética', emoji: '⚡' },
+              { name: 'David López', role: 'Analista de Tarifas', emoji: '📊' },
+              { name: 'Laura García', role: 'Consultora Senior', emoji: '🎯' },
+              { name: 'Miguel Sánchez', role: 'Asesor Técnico', emoji: '🔧' },
+              { name: 'Paula Jiménez', role: 'Especialista PYME', emoji: '🏢' }
+            ].map((asesor, index) => (
+              <div
+                key={index}
+                className="group bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl p-6 border-2 border-[#A8FF00]/20 hover:border-[#A8FF00] transition-all duration-300 text-center hover:scale-105"
+              >
+                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">{asesor.emoji}</div>
+                <h4 className="text-white font-black text-lg mb-1">{asesor.name}</h4>
+                <p className="text-[#A8FF00] text-sm font-semibold">{asesor.role}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Más de <span className="text-[#A8FF00] font-bold">15 profesionales certificados</span> listos para analizar tu factura y encontrar el mejor ahorro para ti
+            </p>
+          </div>
+        </div>
+
         {/* Testimonios Premium */}
         <div className="mb-16">
           <div className="text-center mb-12">
@@ -637,9 +785,13 @@ export default function SubirFactura() {
                 </div>
 
                 {/* Testimonial text */}
-                <p className="text-gray-300 text-lg leading-relaxed mb-6 flex-grow">
-                  Ahorro <span className="text-[#A8FF00] font-bold">45€ al mes</span> sin hacer nada. Solo subí mi factura y ellos se encargaron de todo.
+                <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
+                  Solo con una llamada en 24 horas, ya pude ahorrar <span className="text-[#A8FF00] font-bold">320€ al año</span>. Increíble lo fácil que fue.
                 </p>
+
+                <div className="bg-[#A8FF00]/10 rounded-xl p-3 mb-6 border border-[#A8FF00]/30">
+                  <p className="text-[#A8FF00] text-sm font-semibold">💰 Con ese ahorro me fui de vacaciones a Portugal</p>
+                </div>
 
                 {/* Author */}
                 <div className="flex items-center gap-4 pt-6 border-t border-[#A8FF00]/20">
@@ -654,7 +806,7 @@ export default function SubirFactura() {
 
                 {/* Badge de ahorro */}
                 <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-[#1A1A1A] font-black text-sm">540€/año</p>
+                  <p className="text-[#1A1A1A] font-black text-sm">320€/año</p>
                 </div>
               </div>
             </div>
@@ -678,9 +830,13 @@ export default function SubirFactura() {
                 </div>
 
                 {/* Testimonial text */}
-                <p className="text-gray-300 text-lg leading-relaxed mb-6 flex-grow">
-                  En mi empresa estábamos pagando casi el doble. Ahora ahorramos <span className="text-[#A8FF00] font-bold">más de 800€ al mes</span>.
+                <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
+                  En 24 horas me llamaron con un análisis completo. Ahora mi empresa ahorra <span className="text-[#A8FF00] font-bold">9.600€ al año</span>.
                 </p>
+
+                <div className="bg-[#A8FF00]/10 rounded-xl p-3 mb-6 border border-[#A8FF00]/30">
+                  <p className="text-[#A8FF00] text-sm font-semibold">🏢 Ese dinero lo invertimos en ampliar el negocio</p>
+                </div>
 
                 {/* Author */}
                 <div className="flex items-center gap-4 pt-6 border-t border-[#A8FF00]/20">
@@ -724,9 +880,13 @@ export default function SubirFactura() {
                 </div>
 
                 {/* Testimonial text */}
-                <p className="text-gray-300 text-lg leading-relaxed mb-6 flex-grow">
-                  Lo mejor es la tranquilidad. Sé que mi factura está optimizada y no pago de más.
+                <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
+                  Me llamaron en menos de un día y ahora ahorro <span className="text-[#A8FF00] font-bold">280€ al año</span>. Proceso súper rápido y sin complicaciones.
                 </p>
+
+                <div className="bg-[#A8FF00]/10 rounded-xl p-3 mb-6 border border-[#A8FF00]/30">
+                  <p className="text-[#A8FF00] text-sm font-semibold">✈️ Ese dinero lo usé para un viaje con mi familia</p>
+                </div>
 
                 {/* Author */}
                 <div className="flex items-center gap-4 pt-6 border-t border-[#A8FF00]/20">
@@ -739,9 +899,9 @@ export default function SubirFactura() {
                   </div>
                 </div>
 
-                {/* Badge verificado */}
-                <div className="absolute -top-3 -right-3 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-full p-2 shadow-xl shadow-[#A8FF00]/40">
-                  <CheckCircle className="w-6 h-6 text-[#1A1A1A]" />
+                {/* Badge de ahorro */}
+                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
+                  <p className="text-[#1A1A1A] font-black text-sm">280€/año</p>
                 </div>
               </div>
             </div>
@@ -766,6 +926,51 @@ export default function SubirFactura() {
                 <p className="text-4xl font-black text-[#A8FF00] mb-2">98%</p>
                 <p className="text-gray-400 font-semibold">Tasa de satisfacción</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Oficinas y Ubicación */}
+        <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-10 mb-16 border border-[#A8FF00]/30">
+          <div className="text-center mb-10">
+            <h3 className="text-4xl font-black text-white mb-4">
+              Nos encontramos en <span className="text-[#A8FF00]">España</span>
+            </h3>
+            <p className="text-xl text-gray-400">Con oficinas físicas y un equipo real a tu disposición</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="bg-[#1A1A1A]/50 rounded-2xl p-8 border border-[#A8FF00]/20">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-[#A8FF00]/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl">📍</span>
+                </div>
+                <h4 className="text-[#A8FF00] font-black text-2xl">Oficina Principal</h4>
+              </div>
+              <p className="text-white font-semibold text-lg mb-2">Madrid, España</p>
+              <p className="text-gray-400">Calle Gran Vía 123, 28013</p>
+              <p className="text-gray-400 mt-4">📞 900 123 456</p>
+              <p className="text-gray-400">📧 info@wasabi-energy.com</p>
+            </div>
+
+            <div className="bg-[#1A1A1A]/50 rounded-2xl p-8 border border-[#A8FF00]/20">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 bg-[#A8FF00]/20 rounded-full flex items-center justify-center">
+                  <span className="text-2xl">🏢</span>
+                </div>
+                <h4 className="text-[#A8FF00] font-black text-2xl">Horario</h4>
+              </div>
+              <p className="text-white font-semibold text-lg mb-2">Lunes a Viernes</p>
+              <p className="text-gray-400 mb-4">9:00 - 19:00h</p>
+              <p className="text-white font-semibold text-lg mb-2">Sábados</p>
+              <p className="text-gray-400">10:00 - 14:00h</p>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <div className="inline-flex items-center gap-3 bg-[#A8FF00]/10 rounded-2xl px-6 py-4 border border-[#A8FF00]/30">
+              <Shield className="w-6 h-6 text-[#A8FF00]" />
+              <p className="text-white font-semibold">Empresa registrada y certificada en España</p>
             </div>
           </div>
         </div>
