@@ -988,36 +988,92 @@ export default function SubirFactura() {
         <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-10 mb-16 border border-[#A8FF00]/30">
           <div className="text-center mb-10">
             <h3 className="text-4xl font-black text-white mb-4">
-              Nos encontramos en <span className="text-[#A8FF00]">España</span>
+              Visítanos en nuestras <span className="text-[#A8FF00]">oficinas</span>
             </h3>
-            <p className="text-xl text-gray-400">Con oficinas físicas y un equipo real a tu disposición</p>
+            <p className="text-xl text-gray-400">Con presencia física en Valencia y Albacete</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-[#1A1A1A]/50 rounded-2xl p-8 border border-[#A8FF00]/20">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-[#A8FF00]/20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">📍</span>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
+            {/* Oficina Valencia */}
+            <div className="group bg-[#1A1A1A]/50 rounded-2xl p-8 border-2 border-[#A8FF00]/20 hover:border-[#A8FF00]/60 transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-[#A8FF00]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <span className="text-3xl">📍</span>
                 </div>
-                <h4 className="text-[#A8FF00] font-black text-2xl">Oficina Principal</h4>
+                <h4 className="text-[#A8FF00] font-black text-2xl">Valencia</h4>
               </div>
-              <p className="text-white font-semibold text-lg mb-2">Madrid, España</p>
-              <p className="text-gray-400">Calle Gran Vía 123, 28013</p>
-              <p className="text-gray-400 mt-4">📞 900 123 456</p>
-              <p className="text-gray-400">📧 info@wasabi-energy.com</p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-gray-500 mt-1">🏢</span>
+                  <div>
+                    <p className="text-white font-semibold text-lg">Calle Andarella 2</p>
+                    <p className="text-gray-400">46950 Valencia</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-500">📞</span>
+                  <a href="tel:+34605667145" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                    +34 605 66 71 45
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-500">📧</span>
+                  <a href="mailto:info@wasabienergia.com" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                    info@wasabienergia.com
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-[#1A1A1A]/50 rounded-2xl p-8 border border-[#A8FF00]/20">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 bg-[#A8FF00]/20 rounded-full flex items-center justify-center">
-                  <span className="text-2xl">🏢</span>
+            {/* Oficina Albacete */}
+            <div className="group bg-[#1A1A1A]/50 rounded-2xl p-8 border-2 border-[#A8FF00]/20 hover:border-[#A8FF00]/60 transition-all duration-300">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-14 h-14 bg-[#A8FF00]/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <span className="text-3xl">📍</span>
                 </div>
-                <h4 className="text-[#A8FF00] font-black text-2xl">Horario</h4>
+                <h4 className="text-[#A8FF00] font-black text-2xl">Albacete</h4>
               </div>
-              <p className="text-white font-semibold text-lg mb-2">Lunes a Viernes</p>
-              <p className="text-gray-400 mb-4">9:00 - 19:00h</p>
-              <p className="text-white font-semibold text-lg mb-2">Sábados</p>
-              <p className="text-gray-400">10:00 - 14:00h</p>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-gray-500 mt-1">🏢</span>
+                  <div>
+                    <p className="text-white font-semibold text-lg">Polígono Campollano - Calle A, 7</p>
+                    <p className="text-gray-400">02006 Albacete</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-500">📞</span>
+                  <a href="tel:+34605667145" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                    +34 605 66 71 45
+                  </a>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-gray-500">📧</span>
+                  <a href="mailto:info@wasabienergia.com" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                    info@wasabienergia.com
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Horario */}
+          <div className="bg-[#1A1A1A]/50 rounded-2xl p-8 border border-[#A8FF00]/20 max-w-3xl mx-auto">
+            <div className="flex items-center gap-4 mb-6 justify-center">
+              <div className="w-12 h-12 bg-[#A8FF00]/20 rounded-full flex items-center justify-center">
+                <span className="text-2xl">🕐</span>
+              </div>
+              <h4 className="text-[#A8FF00] font-black text-2xl">Horario de Atención</h4>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 text-center">
+              <div>
+                <p className="text-white font-semibold text-lg mb-2">Lunes a Viernes</p>
+                <p className="text-[#A8FF00] text-2xl font-bold">09:00 - 17:00h</p>
+              </div>
+              <div>
+                <p className="text-white font-semibold text-lg mb-2">Fin de Semana</p>
+                <p className="text-gray-400 text-2xl font-bold">Cerrado</p>
+              </div>
             </div>
           </div>
 
