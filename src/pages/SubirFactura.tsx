@@ -710,42 +710,96 @@ export default function SubirFactura() {
           </div>
         </div>
 
-        {/* Nuestro Equipo de Asesores */}
+        {/* Nuestro Equipo - Liderazgo */}
         <div className="mb-16">
           <div className="text-center mb-12">
             <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
-              Conoce a <span className="text-[#A8FF00]">nuestros asesores energéticos</span>
+              El <span className="text-[#A8FF00]">equipo</span> detrás de Wasabi
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Profesionales certificados que te ayudarán sin coste a maximizar tu ahorro
+              Caras reales, personas reales comprometidas con tu ahorro
             </p>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto mb-8">
-            {[
-              { name: 'José Galero', role: 'Asesor Senior', emoji: '👨‍💼' },
-              { name: 'Franco Tenaglia', role: 'Director Comercial', emoji: '👔' },
-              { name: 'Carlos Martín', role: 'Especialista en Ahorro', emoji: '💡' },
-              { name: 'Ana Rodríguez', role: 'Asesora Energética', emoji: '⚡' },
-              { name: 'David López', role: 'Analista de Tarifas', emoji: '📊' },
-              { name: 'Laura García', role: 'Consultora Senior', emoji: '🎯' },
-              { name: 'Miguel Sánchez', role: 'Asesor Técnico', emoji: '🔧' },
-              { name: 'Paula Jiménez', role: 'Especialista PYME', emoji: '🏢' }
-            ].map((asesor, index) => (
-              <div
-                key={index}
-                className="group bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-2xl p-6 border-2 border-[#A8FF00]/20 hover:border-[#A8FF00] transition-all duration-300 text-center hover:scale-105"
-              >
-                <div className="text-6xl mb-4 group-hover:scale-110 transition-transform">{asesor.emoji}</div>
-                <h4 className="text-white font-black text-lg mb-1">{asesor.name}</h4>
-                <p className="text-[#A8FF00] text-sm font-semibold">{asesor.role}</p>
+          {/* Líderes destacados */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-12">
+            {/* José Calero - CEO */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
+              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl overflow-hidden border-2 border-[#A8FF00]/40 group-hover:border-[#A8FF00] transition-all duration-300">
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src="/WhatsApp_Image_2026-03-03_at_20.47.45.jpeg"
+                    alt="José Calero - Fundador de Wasabi"
+                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/50 to-transparent"></div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <div className="inline-flex items-center gap-2 bg-[#A8FF00] text-[#1A1A1A] px-4 py-1 rounded-full text-xs font-black uppercase mb-3">
+                    <span>⭐</span> Fundador de Wasabi
+                  </div>
+                  <h3 className="text-3xl font-black text-white mb-2">José Calero</h3>
+                  <p className="text-[#A8FF00] font-bold text-lg mb-3">CEO & Fundador</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    Creador de la metodología que ha ayudado a más de 15.000 familias a ahorrar en su factura de luz
+                  </p>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* Franco Tenaglia - Patrocinador */}
+            <div className="group relative">
+              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"></div>
+              <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl overflow-hidden border-2 border-yellow-500/40 group-hover:border-yellow-500 transition-all duration-300">
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src="/641231069_18530982796069231_5302681181679109432_n.jpg"
+                    alt="Franco Tenaglia - Patrocinador"
+                    className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/50 to-transparent"></div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <div className="inline-flex items-center gap-2 bg-yellow-500 text-[#1A1A1A] px-4 py-1 rounded-full text-xs font-black uppercase mb-3">
+                    <span>🏆</span> Patrocinador
+                  </div>
+                  <h3 className="text-3xl font-black text-white mb-2">Franco Tenaglia</h3>
+                  <p className="text-yellow-500 font-bold text-lg mb-3">Patrocinador Oficial</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    Apoyando la misión de hacer el ahorro energético accesible para todos los españoles
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div className="text-center">
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Más de <span className="text-[#A8FF00] font-bold">15 profesionales certificados</span> listos para analizar tu factura y encontrar el mejor ahorro para ti
+          {/* Resto del equipo */}
+          <div className="bg-gradient-to-br from-[#2A2A2A]/50 to-[#1A1A1A]/50 rounded-3xl p-8 border border-[#A8FF00]/20">
+            <h3 className="text-3xl font-black text-white text-center mb-8">
+              Nuestro <span className="text-[#A8FF00]">equipo de asesores</span>
+            </h3>
+            <div className="grid md:grid-cols-6 gap-4 max-w-5xl mx-auto">
+              {[
+                { name: 'Carlos M.', role: 'Especialista', emoji: '💡' },
+                { name: 'Ana R.', role: 'Asesora', emoji: '⚡' },
+                { name: 'David L.', role: 'Analista', emoji: '📊' },
+                { name: 'Laura G.', role: 'Consultora', emoji: '🎯' },
+                { name: 'Miguel S.', role: 'Técnico', emoji: '🔧' },
+                { name: 'Paula J.', role: 'PYME', emoji: '🏢' }
+              ].map((asesor, index) => (
+                <div
+                  key={index}
+                  className="bg-[#1A1A1A]/70 rounded-xl p-4 border border-[#A8FF00]/20 hover:border-[#A8FF00]/60 transition-all duration-300 text-center group hover:scale-105"
+                >
+                  <div className="text-4xl mb-2 group-hover:scale-110 transition-transform">{asesor.emoji}</div>
+                  <h4 className="text-white font-bold text-sm mb-1">{asesor.name}</h4>
+                  <p className="text-[#A8FF00] text-xs font-semibold">{asesor.role}</p>
+                </div>
+              ))}
+            </div>
+            <p className="text-gray-400 text-center mt-6">
+              Y más de <span className="text-[#A8FF00] font-bold">15 profesionales certificados</span> listos para ayudarte
             </p>
           </div>
         </div>
