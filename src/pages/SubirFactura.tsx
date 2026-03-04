@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Upload, CheckCircle, FileText, Phone, TrendingDown, ArrowRight, Zap, Shield, Star } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Upload, CheckCircle, FileText, Phone, TrendingDown, ArrowRight, Zap, Shield, Star, Clock } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 export default function SubirFactura() {
@@ -15,6 +15,41 @@ export default function SubirFactura() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date().getTime();
+      const storageKey = 'offerEndTime';
+
+      let endTime = localStorage.getItem(storageKey);
+
+      if (!endTime || parseInt(endTime) < now) {
+        const newEndTime = now + (5 * 24 * 60 * 60 * 1000);
+        localStorage.setItem(storageKey, newEndTime.toString());
+        endTime = newEndTime.toString();
+      }
+
+      const difference = parseInt(endTime) - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
+        localStorage.removeItem(storageKey);
+        calculateTimeLeft();
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -196,6 +231,67 @@ export default function SubirFactura() {
             <div className="flex items-center gap-2">
               <Star className="w-5 h-5 text-[#A8FF00]" />
               <span className="text-gray-400 text-sm">Gratis</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Contador de cuenta regresiva */}
+        <div className="bg-gradient-to-br from-red-600/30 via-orange-600/30 to-red-600/30 border-2 border-red-500 rounded-3xl p-8 mb-16 text-center shadow-2xl shadow-red-500/30 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20"></div>
+
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-3 bg-red-600/40 backdrop-blur-sm border border-red-400/50 rounded-full px-6 py-2 mb-6 animate-pulse">
+              <Clock className="w-5 h-5 text-red-200" />
+              <span className="text-red-100 font-bold text-sm uppercase tracking-wider">Oferta por tiempo limitado</span>
+            </div>
+
+            <h3 className="text-3xl md:text-4xl font-black text-white mb-3">
+              ¡Esta oferta termina en:
+            </h3>
+
+            <p className="text-lg text-red-100 mb-8 max-w-2xl mx-auto">
+              Después de este plazo, volveremos a nuestra tarifa estándar
+            </p>
+
+            <div className="flex justify-center gap-4 md:gap-8 mb-6">
+              <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[100px] border border-white/30 shadow-xl">
+                <div className="text-4xl md:text-6xl font-black text-white mb-2 tabular-nums">
+                  {String(timeLeft.days).padStart(2, '0')}
+                </div>
+                <div className="text-xs md:text-sm text-red-200 font-semibold uppercase tracking-wider">Días</div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[100px] border border-white/30 shadow-xl">
+                <div className="text-4xl md:text-6xl font-black text-white mb-2 tabular-nums">
+                  {String(timeLeft.hours).padStart(2, '0')}
+                </div>
+                <div className="text-xs md:text-sm text-red-200 font-semibold uppercase tracking-wider">Horas</div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[100px] border border-white/30 shadow-xl">
+                <div className="text-4xl md:text-6xl font-black text-white mb-2 tabular-nums">
+                  {String(timeLeft.minutes).padStart(2, '0')}
+                </div>
+                <div className="text-xs md:text-sm text-red-200 font-semibold uppercase tracking-wider">Min</div>
+              </div>
+
+              <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[100px] border border-white/30 shadow-xl animate-pulse">
+                <div className="text-4xl md:text-6xl font-black text-white mb-2 tabular-nums">
+                  {String(timeLeft.seconds).padStart(2, '0')}
+                </div>
+                <div className="text-xs md:text-sm text-red-200 font-semibold uppercase tracking-wider">Seg</div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
+              <p className="text-white font-semibold text-lg mb-2">
+                🔥 Beneficios exclusivos de esta oferta:
+              </p>
+              <ul className="text-red-100 text-sm space-y-1">
+                <li>✓ Análisis gratuito en menos de 24 horas</li>
+                <li>✓ Atención prioritaria por WhatsApp</li>
+                <li>✓ Garantía de máximo ahorro o no te molestamos</li>
+              </ul>
             </div>
           </div>
         </div>
