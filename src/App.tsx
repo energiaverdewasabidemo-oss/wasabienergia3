@@ -11,6 +11,7 @@ const OptimizedTestimonials = lazy(() => import('./components/OptimizedTestimoni
 const OptimizedContactForm = lazy(() => import('./components/OptimizedContactForm'));
 const OptimizedFooter = lazy(() => import('./components/OptimizedFooter'));
 const SubirFactura = lazy(() => import('./pages/SubirFactura'));
+const SubirFacturaTest = lazy(() => import('./pages/SubirFacturaTest'));
 
 // Loading component optimizado
 const LoadingSpinner = () => (
@@ -55,19 +56,37 @@ const HomePage = () => (
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] overflow-x-hidden">
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/subir-factura"
-          element={
-            <Suspense fallback={<LoadingSpinner />}>
-              <SubirFactura />
-            </Suspense>
-          }
-        />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={
+        <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] overflow-x-hidden">
+          <HomePage />
+        </div>
+      } />
+      <Route
+        path="/subir-factura"
+        element={
+          <Suspense fallback={
+            <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center">
+              <LoadingSpinner />
+            </div>
+          }>
+            <SubirFactura />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/test"
+        element={
+          <Suspense fallback={
+            <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center">
+              <LoadingSpinner />
+            </div>
+          }>
+            <SubirFacturaTest />
+          </Suspense>
+        }
+      />
+    </Routes>
   );
 }
 
