@@ -969,6 +969,123 @@ export default function SubirFactura() {
           </div>
         </div>
       </div>
+
+      {/* Footer Legal */}
+      <footer className="bg-gradient-to-br from-[#2A2A2A] via-[#1A1A1A] to-[#2A2A2A] border-t border-[#A8FF00]/20 py-12 relative">
+        <div className="container mx-auto px-4 max-w-6xl relative z-10">
+
+          {/* Disclaimer de Meta/Facebook */}
+          <div className="bg-[#1A1A1A]/80 rounded-2xl p-8 mb-10 border border-gray-700/50">
+            <h3 className="text-white font-bold text-lg mb-4 flex items-center gap-2">
+              <Shield className="w-5 h-5 text-gray-400" />
+              Aviso Legal sobre Publicidad
+            </h3>
+            <div className="text-gray-400 text-sm leading-relaxed space-y-3">
+              <p>
+                Este sitio web no forma parte de Facebook, Meta Platforms Inc., ni está respaldado por Facebook o Meta.
+                FACEBOOK y META son marcas registradas de Meta Platforms, Inc.
+              </p>
+              <p>
+                Esta página web utiliza publicidad de pago en plataformas de Meta (Facebook e Instagram) para promocionar
+                nuestros servicios de asesoría energética. Los resultados mostrados son ejemplos reales de clientes, pero
+                los resultados individuales pueden variar según cada caso particular.
+              </p>
+              <p className="text-xs text-gray-500">
+                Descargo de responsabilidad: No garantizamos ahorros específicos. El ahorro real dependerá de tu contrato
+                actual, consumo y las tarifas disponibles en el momento del análisis.
+              </p>
+            </div>
+          </div>
+
+          {/* Enlaces Legales */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div>
+              <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Información Legal</h4>
+              <div className="space-y-2">
+                <a
+                  href="/politica-privacidad.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
+                >
+                  Política de Privacidad
+                </a>
+                <a
+                  href="/aviso-legal.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
+                >
+                  Aviso Legal
+                </a>
+                <a
+                  href="/terminos-condiciones.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
+                >
+                  Términos y Condiciones
+                </a>
+                <a
+                  href="/cookies.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-gray-400 hover:text-[#A8FF00] transition-colors text-sm"
+                >
+                  Política de Cookies
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Contacto</h4>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <p>Email: info@wasabienergia.com</p>
+                <p>Teléfono: +34 621 50 83 00</p>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Oficinas</h4>
+              <div className="space-y-3 text-gray-400 text-sm">
+                <div>
+                  <p className="font-semibold text-white">Valencia</p>
+                  <p>Calle Andarella 2</p>
+                  <p>46950 Valencia</p>
+                </div>
+                <div>
+                  <p className="font-semibold text-white">Albacete</p>
+                  <p>Pol. Campollano - C/ A, 7</p>
+                  <p>02006 Albacete</p>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-[#A8FF00] font-bold mb-4 text-lg">Horario</h4>
+              <div className="space-y-2 text-gray-400 text-sm">
+                <p>Lunes a Viernes</p>
+                <p className="text-white font-semibold">09:00 - 17:00h</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Copyright y CIF */}
+          <div className="border-t border-gray-700/50 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+              <div className="text-gray-400 text-sm">
+                <p className="mb-1">© 2025 Energía Verde Wasabi SL - Todos los derechos reservados</p>
+                <p className="text-xs text-gray-500">CIF: B42709378 | Energía 100% renovable certificada</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Shield className="w-5 h-5 text-[#A8FF00]" />
+                <span className="text-gray-400 text-sm">Sitio web seguro y protegido</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </footer>
     </div>
   );
 }
