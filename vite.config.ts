@@ -43,13 +43,22 @@ export default defineConfig({
     // Configuración de chunks para carga óptima
     rollupOptions: {
       output: {
-        manualChunks: {
-          // Vendor chunk para librerías principales
-          vendor: ['react', 'react-dom'],
-          // Icons chunk separado para lazy loading
-          icons: ['lucide-react'],
-          // Form utilities
-          forms: ['react-hook-form']
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) {
+              return 'vendor';
+            }
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            if (id.includes('react-hook-form') || id.includes('@emailjs')) {
+              return 'forms';
+            }
+            if (id.includes('@supabase')) {
+              return 'supabase';
+            }
+            return 'vendor-misc';
+          }
         },
         // Nombres de archivos optimizados
         chunkFileNames: 'assets/[name]-[hash].js',
