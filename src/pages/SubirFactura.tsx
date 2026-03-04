@@ -264,11 +264,11 @@ export default function SubirFactura() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/30">
-              <p className="text-[#A8FF00] font-black text-4xl mb-2">+15.000</p>
+              <p className="text-[#A8FF00] font-black text-4xl mb-2">+30.000</p>
               <p className="text-gray-300 font-semibold">Clientes satisfechos</p>
             </div>
             <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/30">
-              <p className="text-[#A8FF00] font-black text-4xl mb-2">450€</p>
+              <p className="text-[#A8FF00] font-black text-4xl mb-2">250€</p>
               <p className="text-gray-300 font-semibold">Ahorro medio anual</p>
             </div>
             <div className="bg-[#1A1A1A]/50 rounded-2xl p-6 border border-[#A8FF00]/30">
