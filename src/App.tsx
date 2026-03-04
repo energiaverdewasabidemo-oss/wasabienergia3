@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import OptimizedHeader from './components/OptimizedHeader';
 import OptimizedHero from './components/OptimizedHero';
+import SubirFactura from './pages/SubirFactura';
 
 // Lazy load components for better performance
 const OptimizedBenefits = lazy(() => import('./components/OptimizedBenefits'));
@@ -10,8 +11,6 @@ const OptimizedHowItWorks = lazy(() => import('./components/OptimizedHowItWorks'
 const OptimizedTestimonials = lazy(() => import('./components/OptimizedTestimonials'));
 const OptimizedContactForm = lazy(() => import('./components/OptimizedContactForm'));
 const OptimizedFooter = lazy(() => import('./components/OptimizedFooter'));
-const SubirFactura = lazy(() => import('./pages/SubirFactura'));
-const SubirFacturaTest = lazy(() => import('./pages/SubirFacturaTest'));
 
 // Loading component optimizado
 const LoadingSpinner = () => (
@@ -64,27 +63,7 @@ function App() {
       } />
       <Route
         path="/subir-factura"
-        element={
-          <Suspense fallback={
-            <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center">
-              <LoadingSpinner />
-            </div>
-          }>
-            <SubirFactura />
-          </Suspense>
-        }
-      />
-      <Route
-        path="/test"
-        element={
-          <Suspense fallback={
-            <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#2A2A2A] to-[#1A1A1A] flex items-center justify-center">
-              <LoadingSpinner />
-            </div>
-          }>
-            <SubirFacturaTest />
-          </Suspense>
-        }
+        element={<SubirFactura />}
       />
     </Routes>
   );
