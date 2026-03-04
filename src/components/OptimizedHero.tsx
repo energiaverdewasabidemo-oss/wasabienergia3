@@ -81,8 +81,8 @@ const OptimizedHero = () => {
                 {/* 🎯 LOGO PRINCIPAL CON CONTRASTE ABSOLUTO */}
                 <div className="relative z-10 transform group-hover:scale-110 transition-transform duration-500">
                   <img 
-                    src="/WhatsApp_Image_2025-06-26_at_19.55.53__1_-removebg-preview copy copy.png" 
-                    alt="Energía Verde Wasabi" 
+                    src="/wasabi-logo-main.png"
+                    alt="Energía Verde Wasabi"
                     className="h-32 w-auto relative z-10 transition-all duration-500 group-hover:brightness-110"
                     style={{
                       maxWidth: '400px',

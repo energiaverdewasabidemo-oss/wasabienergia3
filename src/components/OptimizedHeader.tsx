@@ -39,8 +39,8 @@ const OptimizedHeader = () => {
                 {/* Logo directo con efectos sutiles */}
                 <div className="relative p-2 rounded-xl transition-all duration-300 group-hover:scale-110">
                   <img 
-                    src="/WhatsApp_Image_2025-06-26_at_19.55.53__1_-removebg-preview copy copy.png" 
-                    alt="Energía Verde Wasabi" 
+                    src="/wasabi-logo-main.png"
+                    alt="Energía Verde Wasabi"
                     className="h-10 w-auto sm:h-12 lg:h-14 transition-all duration-300 drop-shadow-lg group-hover:drop-shadow-2xl"
                     style={{
                       maxWidth: '180px',
