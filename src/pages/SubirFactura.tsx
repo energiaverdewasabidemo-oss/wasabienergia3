@@ -1156,14 +1156,12 @@ export default function SubirFactura() {
             </div>
 
             {/* CTA */}
-            <a
-              href="https://wa.me/34610764494?text=Hola%20LuzIA!%20Quiero%20ver%20el%20mejor%20precio%20para%20mi%20factura%20de%20luz.%20Inf%C3%B3rmame%20por%20favor"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
               className="bg-[#A8FF00] hover:bg-[#96E600] text-[#1A1A1A] px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105 whitespace-nowrap"
             >
               Chatear ahora
-            </a>
+            </button>
           </div>
         </div>
       </div>
