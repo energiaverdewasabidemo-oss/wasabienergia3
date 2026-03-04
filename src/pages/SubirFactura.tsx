@@ -224,7 +224,7 @@ export default function SubirFactura() {
                 <TrendingDown className="w-8 h-8 text-red-400" />
               </div>
               <p className="text-gray-300 font-medium mb-2">
-                Es posible que estés pagando más que otros consumiendo menos
+                Estás pagando más que otros consumiendo menos
               </p>
             </div>
             <div className="text-center p-6 bg-[#1A1A1A]/50 rounded-2xl border border-[#A8FF00]/20 hover:border-[#A8FF00]/40 transition-all duration-300">
@@ -232,7 +232,7 @@ export default function SubirFactura() {
                 <FileText className="w-8 h-8 text-yellow-400" />
               </div>
               <p className="text-gray-300 font-medium mb-2">
-                Es posible que no entiendas tu factura y estés pagando conceptos innecesarios
+                No entiendes tu factura y estás pagando conceptos innecesarios
               </p>
             </div>
             <div className="text-center p-6 bg-[#1A1A1A]/50 rounded-2xl border border-[#A8FF00]/20 hover:border-[#A8FF00]/40 transition-all duration-300">
@@ -240,7 +240,7 @@ export default function SubirFactura() {
                 <CheckCircle className="w-8 h-8 text-orange-400" />
               </div>
               <p className="text-gray-300 font-medium mb-2">
-                Es posible que estés en una tarifa antigua sin saberlo
+                Estás en una tarifa antigua sin saberlo
               </p>
             </div>
           </div>
