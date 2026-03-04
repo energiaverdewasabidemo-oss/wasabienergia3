@@ -84,17 +84,23 @@
     
     <!-- Remove loading screen when app loads -->
     <script>
-      window.addEventListener('load', function() {
+      function removeLoadingScreen() {
         const loadingScreen = document.getElementById('loading-screen');
         if (loadingScreen) {
+          loadingScreen.style.opacity = '0';
           setTimeout(() => {
-            loadingScreen.style.opacity = '0';
-            setTimeout(() => {
-              loadingScreen.remove();
-            }, 500);
+            loadingScreen.remove();
           }, 500);
         }
-      });
+      }
+
+      window.addEventListener('load', removeLoadingScreen);
+
+      setTimeout(removeLoadingScreen, 3000);
+
+      if (document.readyState === 'complete') {
+        removeLoadingScreen();
+      }
     </script>
     
     <script type="module" src="/src/main.tsx"></script>
