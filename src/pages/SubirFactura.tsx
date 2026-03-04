@@ -429,78 +429,6 @@ export default function SubirFactura() {
           </div>
         </div>
 
-        {/* Contador de cuenta regresiva - Reubicado estratégicamente */}
-        <div className="bg-gradient-to-br from-[#A8FF00]/20 via-[#96E600]/20 to-[#A8FF00]/20 border-4 border-[#A8FF00] rounded-3xl p-8 md:p-12 mb-16 text-center shadow-2xl shadow-[#A8FF00]/50 relative overflow-hidden animate-pulse">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-10"></div>
-
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-3 bg-[#A8FF00]/40 backdrop-blur-sm border-2 border-[#A8FF00] rounded-full px-8 py-3 mb-6 animate-bounce shadow-lg shadow-[#A8FF00]/50">
-              <Clock className="w-6 h-6 text-[#1A1A1A]" />
-              <span className="text-[#1A1A1A] font-black text-base uppercase tracking-wider">Oferta por tiempo limitado</span>
-            </div>
-
-            <h3 className="text-4xl md:text-5xl font-black text-white mb-4 drop-shadow-lg">
-              ⚡ ¡Esta oferta termina en: ⚡
-            </h3>
-
-            <p className="text-xl text-white mb-10 max-w-2xl mx-auto font-bold">
-              Después de este plazo, volveremos a nuestra tarifa estándar
-            </p>
-
-            <div className="flex justify-center gap-4 md:gap-8 mb-8">
-              <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-xl rounded-3xl p-6 md:p-8 min-w-[90px] md:min-w-[120px] border-4 border-[#A8FF00] shadow-2xl shadow-[#A8FF00]/60 hover:scale-110 transition-transform duration-300">
-                <div className="text-5xl md:text-7xl font-black text-[#A8FF00] mb-3 tabular-nums drop-shadow-lg">
-                  {String(timeLeft.days).padStart(2, '0')}
-                </div>
-                <div className="text-sm md:text-base text-white font-black uppercase tracking-wider">Días</div>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-xl rounded-3xl p-6 md:p-8 min-w-[90px] md:min-w-[120px] border-4 border-[#A8FF00] shadow-2xl shadow-[#A8FF00]/60 hover:scale-110 transition-transform duration-300">
-                <div className="text-5xl md:text-7xl font-black text-[#A8FF00] mb-3 tabular-nums drop-shadow-lg">
-                  {String(timeLeft.hours).padStart(2, '0')}
-                </div>
-                <div className="text-sm md:text-base text-white font-black uppercase tracking-wider">Horas</div>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-xl rounded-3xl p-6 md:p-8 min-w-[90px] md:min-w-[120px] border-4 border-[#A8FF00] shadow-2xl shadow-[#A8FF00]/60 hover:scale-110 transition-transform duration-300">
-                <div className="text-5xl md:text-7xl font-black text-[#A8FF00] mb-3 tabular-nums drop-shadow-lg">
-                  {String(timeLeft.minutes).padStart(2, '0')}
-                </div>
-                <div className="text-sm md:text-base text-white font-black uppercase tracking-wider">Min</div>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-xl rounded-3xl p-6 md:p-8 min-w-[90px] md:min-w-[120px] border-4 border-[#A8FF00] shadow-2xl shadow-[#A8FF00]/60 animate-pulse hover:scale-110 transition-transform duration-300">
-                <div className="text-5xl md:text-7xl font-black text-[#A8FF00] mb-3 tabular-nums drop-shadow-lg">
-                  {String(timeLeft.seconds).padStart(2, '0')}
-                </div>
-                <div className="text-sm md:text-base text-white font-black uppercase tracking-wider">Seg</div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-sm rounded-2xl p-6 max-w-3xl mx-auto border-2 border-[#A8FF00]">
-              <p className="text-white font-black text-xl mb-4">
-                🔥 Beneficios exclusivos de esta oferta:
-              </p>
-              <ul className="text-white text-base space-y-2 font-semibold">
-                <li>✓ Análisis gratuito en menos de 24 horas</li>
-                <li>✓ Atención prioritaria por WhatsApp</li>
-                <li>✓ Garantía de máximo ahorro o no te molestamos</li>
-              </ul>
-            </div>
-
-            <div className="mt-8">
-              <button
-                onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-10 py-5 rounded-full text-xl font-black hover:shadow-2xl hover:shadow-[#A8FF00]/80 transition-all duration-300 transform hover:scale-110 relative overflow-hidden border-4 border-[#1A1A1A]"
-              >
-                <span className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                <span className="relative z-10">👉 Chatear con LuzIA AHORA</span>
-                <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-          </div>
-        </div>
-
         {/* WhatsApp LuzIA */}
         <div id="formulario" className="relative mb-16 scroll-mt-20">
           <div className="max-w-5xl mx-auto">
@@ -1193,6 +1121,52 @@ export default function SubirFactura() {
 
         </div>
       </footer>
+
+      {/* Contador fijo minimalista en el footer */}
+      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[#1A1A1A]/95 via-[#2A2A2A]/95 to-[#1A1A1A]/95 backdrop-blur-lg border-t border-[#A8FF00]/30 py-3 px-4 z-50 shadow-lg shadow-[#A8FF00]/20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            {/* Texto */}
+            <div className="flex items-center gap-2">
+              <Clock className="w-4 h-4 text-[#A8FF00]" />
+              <span className="text-white text-sm font-semibold">Oferta termina en:</span>
+            </div>
+
+            {/* Contador */}
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1">
+                <span className="text-[#A8FF00] text-2xl font-black tabular-nums">{String(timeLeft.days).padStart(2, '0')}</span>
+                <span className="text-gray-400 text-xs font-medium">d</span>
+              </div>
+              <span className="text-gray-600">:</span>
+              <div className="flex items-center gap-1">
+                <span className="text-[#A8FF00] text-2xl font-black tabular-nums">{String(timeLeft.hours).padStart(2, '0')}</span>
+                <span className="text-gray-400 text-xs font-medium">h</span>
+              </div>
+              <span className="text-gray-600">:</span>
+              <div className="flex items-center gap-1">
+                <span className="text-[#A8FF00] text-2xl font-black tabular-nums">{String(timeLeft.minutes).padStart(2, '0')}</span>
+                <span className="text-gray-400 text-xs font-medium">m</span>
+              </div>
+              <span className="text-gray-600">:</span>
+              <div className="flex items-center gap-1">
+                <span className="text-[#A8FF00] text-2xl font-black tabular-nums">{String(timeLeft.seconds).padStart(2, '0')}</span>
+                <span className="text-gray-400 text-xs font-medium">s</span>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <a
+              href="https://wa.me/34610764494?text=Hola%20LuzIA!%20Quiero%20ver%20el%20mejor%20precio%20para%20mi%20factura%20de%20luz.%20Inf%C3%B3rmame%20por%20favor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#A8FF00] hover:bg-[#96E600] text-[#1A1A1A] px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 hover:scale-105 whitespace-nowrap"
+            >
+              Chatear ahora
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
