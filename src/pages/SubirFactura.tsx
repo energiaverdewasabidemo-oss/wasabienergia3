@@ -255,7 +255,7 @@ export default function SubirFactura() {
           <div className="max-w-4xl mx-auto mb-8">
             <div className="flex items-center justify-between mb-3">
               <span className="text-white font-bold text-lg">Ahorro total generado</span>
-              <span className="text-[#A8FF00] font-black text-2xl">10.000.000€</span>
+              <span className="text-[#A8FF00] font-black text-2xl">7.500.000€</span>
             </div>
             <div className="h-6 bg-[#1A1A1A] rounded-full overflow-hidden border-2 border-[#A8FF00]/30">
               <div className="h-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] rounded-full animate-pulse" style={{width: '85%'}}></div>
@@ -477,8 +477,8 @@ export default function SubirFactura() {
                   <div className="flex items-center gap-4">
                     <div className="text-5xl">⚡</div>
                     <div>
-                      <p className="text-white font-bold text-lg">+10.000 clientes han confiado en nosotros</p>
-                      <p className="text-gray-400">Con un ahorro promedio de 320€/año</p>
+                      <p className="text-white font-bold text-lg">+30.000 clientes han confiado en nosotros</p>
+                      <p className="text-gray-400">Con un ahorro promedio de 250€/año</p>
                     </div>
                   </div>
                 </div>
@@ -809,7 +809,7 @@ export default function SubirFactura() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#A8FF00]/20 to-[#96E600]/20 border border-[#A8FF00]/40 rounded-full px-6 py-3 mb-6 backdrop-blur-sm">
               <Star className="w-6 h-6 text-[#A8FF00] fill-[#A8FF00]" />
-              <span className="text-[#A8FF00] font-black text-lg">+10.000 clientes satisfechos</span>
+              <span className="text-[#A8FF00] font-black text-lg">+30.000 clientes satisfechos</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
               Lo que dicen <span className="text-[#A8FF00]">nuestros clientes</span>
@@ -840,7 +840,7 @@ export default function SubirFactura() {
 
                 {/* Testimonial text */}
                 <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-                  Solo con una llamada en 24 horas, ya pude ahorrar <span className="text-[#A8FF00] font-bold">320€ al año</span>. Increíble lo fácil que fue.
+                  Solo con una llamada en 24 horas, ya pude ahorrar <span className="text-[#A8FF00] font-bold">250€ al año</span>. Increíble lo fácil que fue.
                 </p>
 
                 <div className="bg-[#A8FF00]/10 rounded-xl p-3 mb-6 border border-[#A8FF00]/30">
@@ -860,7 +860,7 @@ export default function SubirFactura() {
 
                 {/* Badge de ahorro */}
                 <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-[#1A1A1A] font-black text-sm">320€/año</p>
+                  <p className="text-[#1A1A1A] font-black text-sm">250€/año</p>
                 </div>
               </div>
             </div>
@@ -885,7 +885,7 @@ export default function SubirFactura() {
 
                 {/* Testimonial text */}
                 <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-                  En 24 horas me llamaron con un análisis completo. Ahora mi empresa ahorra <span className="text-[#A8FF00] font-bold">9.600€ al año</span>.
+                  En 24 horas me llamaron con un análisis completo. Ahora mi empresa ahorra <span className="text-[#A8FF00] font-bold">6.800€ al año</span>.
                 </p>
 
                 <div className="bg-[#A8FF00]/10 rounded-xl p-3 mb-6 border border-[#A8FF00]/30">
@@ -905,7 +905,7 @@ export default function SubirFactura() {
 
                 {/* Badge de ahorro */}
                 <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-[#1A1A1A] font-black text-sm">9.600€/año</p>
+                  <p className="text-[#1A1A1A] font-black text-sm">6.800€/año</p>
                 </div>
 
                 {/* Badge "Más popular" */}
@@ -935,7 +935,7 @@ export default function SubirFactura() {
 
                 {/* Testimonial text */}
                 <p className="text-gray-300 text-lg leading-relaxed mb-4 flex-grow">
-                  Me llamaron en menos de un día y ahora ahorro <span className="text-[#A8FF00] font-bold">280€ al año</span>. Proceso súper rápido y sin complicaciones.
+                  Me llamaron en menos de un día y ahora ahorro <span className="text-[#A8FF00] font-bold">240€ al año</span>. Proceso súper rápido y sin complicaciones.
                 </p>
 
                 <div className="bg-[#A8FF00]/10 rounded-xl p-3 mb-6 border border-[#A8FF00]/30">
@@ -955,7 +955,7 @@ export default function SubirFactura() {
 
                 {/* Badge de ahorro */}
                 <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl px-4 py-2 shadow-xl shadow-yellow-500/30 rotate-6 group-hover:rotate-12 transition-transform duration-300">
-                  <p className="text-[#1A1A1A] font-black text-sm">280€/año</p>
+                  <p className="text-[#1A1A1A] font-black text-sm">240€/año</p>
                 </div>
               </div>
             </div>
@@ -965,11 +965,11 @@ export default function SubirFactura() {
           <div className="mt-12 bg-gradient-to-r from-[#2A2A2A] via-[#1A1A1A] to-[#2A2A2A] rounded-2xl p-8 border border-[#A8FF00]/30">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div>
-                <p className="text-4xl font-black text-[#A8FF00] mb-2">10K+</p>
+                <p className="text-4xl font-black text-[#A8FF00] mb-2">30K+</p>
                 <p className="text-gray-400 font-semibold">Clientes satisfechos</p>
               </div>
               <div>
-                <p className="text-4xl font-black text-[#A8FF00] mb-2">320€</p>
+                <p className="text-4xl font-black text-[#A8FF00] mb-2">250€</p>
                 <p className="text-gray-400 font-semibold">Ahorro medio/año</p>
               </div>
               <div>
