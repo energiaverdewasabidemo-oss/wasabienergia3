@@ -171,12 +171,16 @@ export default function SubirFactura() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <a
-              href="#formulario"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-[#A8FF00]/50 transition-all duration-300 transform hover:scale-110 relative overflow-hidden"
+              href="https://wa.me/34610764494?text=Hola%20LuzIA!%20Quiero%20ver%20el%20mejor%20precio%20para%20mi%20factura%20de%20luz.%20Inf%C3%B3rmame%20por%20favor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-300 transform hover:scale-110 relative overflow-hidden"
             >
               <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-              <Upload className="w-6 h-6 relative z-10" />
-              <span className="relative z-10">Subir mi factura ahora</span>
+              <svg className="w-6 h-6 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              <span className="relative z-10">Chatear con LuzIA</span>
               <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -392,319 +396,119 @@ export default function SubirFactura() {
           </div>
         </div>
 
-        {/* Formulario Moderno */}
+        {/* WhatsApp LuzIA */}
         <div id="formulario" className="relative mb-16 scroll-mt-20">
           <div className="max-w-5xl mx-auto">
             {/* Header del formulario */}
             <div className="text-center mb-10">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#A8FF00] to-[#96E600] rounded-3xl mb-6 shadow-2xl shadow-[#A8FF00]/50 animate-pulse">
-                <Upload className="w-10 h-10 text-[#1A1A1A]" />
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-3xl mb-6 shadow-2xl shadow-[#25D366]/50 animate-pulse">
+                <Phone className="w-10 h-10 text-white" />
               </div>
               <h2 className="text-5xl md:text-6xl font-black text-white mb-4">
-                Sube tu <span className="text-[#A8FF00]">factura ahora</span>
+                Habla con <span className="text-[#25D366]">LuzIA</span>
               </h2>
               <p className="text-xl text-gray-300">
-                Análisis gratuito y sin compromiso. Respuesta en menos de 24 horas.
+                Nuestro comparador inteligente en WhatsApp. Respuesta instantánea.
               </p>
             </div>
 
-            {/* Grid de dos columnas: Info + Formulario */}
-            <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {/* WhatsApp CTA Card */}
+            <div className="max-w-4xl mx-auto">
+              <div className="relative group">
+                {/* Glow effect */}
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#25D366] via-[#128C7E] to-[#25D366] rounded-3xl blur-2xl opacity-50 group-hover:opacity-75 transition duration-500 animate-pulse"></div>
 
-              {/* Columna izquierda - Beneficios */}
-              <div className="space-y-6">
-                <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 border border-[#A8FF00]/30">
-                  <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#A8FF00]/20 flex items-center justify-center">
-                      <CheckCircle className="w-6 h-6 text-[#A8FF00]" />
-                    </div>
-                    ¿Por qué con nosotros?
-                  </h3>
-
-                  <div className="space-y-5">
-                    <div className="flex items-start gap-4 group">
-                      <div className="w-8 h-8 rounded-lg bg-[#A8FF00]/10 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#A8FF00]/20 transition-colors">
-                        <Zap className="w-5 h-5 text-[#A8FF00]" />
-                      </div>
-                      <div>
-                        <h4 className="text-white font-bold text-lg mb-1">Análisis experto</h4>
-                        <p className="text-gray-400 leading-relaxed">
-                          Revisamos cada línea de tu factura para encontrar oportunidades de ahorro que otros pasan por alto.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4 group">
-                      <div className="w-8 h-8 rounded-lg bg-[#A8FF00]/10 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#A8FF00]/20 transition-colors">
-                        <Shield className="w-5 h-5 text-[#A8FF00]" />
-                      </div>
-                      <div>
-                        <h4 className="text-white font-bold text-lg mb-1">100% Seguro</h4>
-                        <p className="text-gray-400 leading-relaxed">
-                          Tus datos están protegidos y solo los usamos para analizar tu factura. Nunca los compartimos.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4 group">
-                      <div className="w-8 h-8 rounded-lg bg-[#A8FF00]/10 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#A8FF00]/20 transition-colors">
-                        <Star className="w-5 h-5 text-[#A8FF00]" />
-                      </div>
-                      <div>
-                        <h4 className="text-white font-bold text-lg mb-1">Sin letra pequeña</h4>
-                        <p className="text-gray-400 leading-relaxed">
-                          Solo te contactamos si encontramos una mejora real. Si no hay ahorro, no te molestamos.
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start gap-4 group">
-                      <div className="w-8 h-8 rounded-lg bg-[#A8FF00]/10 flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-[#A8FF00]/20 transition-colors">
-                        <Phone className="w-5 h-5 text-[#A8FF00]" />
-                      </div>
-                      <div>
-                        <h4 className="text-white font-bold text-lg mb-1">Respuesta rápida</h4>
-                        <p className="text-gray-400 leading-relaxed">
-                          Te llamamos en menos de 24 horas con el análisis completo y propuestas concretas.
-                        </p>
-                      </div>
-                    </div>
+                <div className="relative bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl overflow-hidden border-2 border-[#25D366]/60 shadow-2xl">
+                  {/* Efectos de fondo */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute top-10 right-10 w-96 h-96 bg-[#25D366]/10 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#128C7E]/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
                   </div>
-                </div>
 
-                {/* Trust badge adicional */}
-                <div className="bg-gradient-to-r from-[#A8FF00]/10 to-[#96E600]/10 rounded-2xl p-6 border border-[#A8FF00]/30">
-                  <div className="flex items-center gap-4">
-                    <div className="text-5xl">⚡</div>
-                    <div>
-                      <p className="text-white font-bold text-lg">+30.000 clientes han confiado en nosotros</p>
-                      <p className="text-gray-400">Con un ahorro promedio de 250€/año</p>
+                  <div className="relative z-10 p-12 md:p-16 text-center">
+                    {/* WhatsApp Icon */}
+                    <div className="inline-flex items-center justify-center w-32 h-32 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-full mb-8 shadow-2xl shadow-[#25D366]/50 group-hover:scale-110 transition-transform duration-500">
+                      <svg className="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                      </svg>
+                    </div>
+
+                    {/* Content */}
+                    <h3 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
+                      Chatea con <span className="text-[#25D366]">LuzIA</span><br />
+                      <span className="text-2xl md:text-3xl text-gray-400 font-semibold">Tu asesora energética 24/7</span>
+                    </h3>
+
+                    <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                      Envía tu factura por WhatsApp y recibe un análisis completo al instante.
+                      Sin formularios, sin esperas.
+                    </p>
+
+                    {/* Benefits */}
+                    <div className="grid md:grid-cols-3 gap-4 mb-10 max-w-3xl mx-auto">
+                      <div className="bg-[#25D366]/10 rounded-2xl p-4 border border-[#25D366]/30">
+                        <div className="text-3xl mb-2">⚡</div>
+                        <p className="text-white font-bold text-sm">Respuesta instantánea</p>
+                      </div>
+                      <div className="bg-[#25D366]/10 rounded-2xl p-4 border border-[#25D366]/30">
+                        <div className="text-3xl mb-2">🤖</div>
+                        <p className="text-white font-bold text-sm">IA especializada</p>
+                      </div>
+                      <div className="bg-[#25D366]/10 rounded-2xl p-4 border border-[#25D366]/30">
+                        <div className="text-3xl mb-2">💰</div>
+                        <p className="text-white font-bold text-sm">Ahorro garantizado</p>
+                      </div>
+                    </div>
+
+                    {/* WhatsApp Button */}
+                    <a
+                      href="https://wa.me/34610764494?text=Hola%20LuzIA!%20Quiero%20ver%20el%20mejor%20precio%20para%20mi%20factura%20de%20luz.%20Inf%C3%B3rmame%20por%20favor"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/btn relative inline-flex items-center gap-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-12 py-6 rounded-full text-2xl font-black hover:shadow-2xl hover:shadow-[#25D366]/60 transition-all duration-300 transform hover:scale-110 overflow-hidden"
+                    >
+                      <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700"></span>
+
+                      <svg className="w-8 h-8 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                      </svg>
+
+                      <span className="relative z-10">Chatear con LuzIA ahora</span>
+
+                      <ArrowRight className="w-8 h-8 relative z-10 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+
+                    {/* Footer info */}
+                    <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-gray-400">
+                      <div className="flex items-center gap-2">
+                        <CheckCircle className="w-5 h-5 text-[#25D366]" />
+                        <span className="text-sm font-semibold">Sin instalación</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Shield className="w-5 h-5 text-[#25D366]" />
+                        <span className="text-sm font-semibold">100% Seguro</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Star className="w-5 h-5 text-[#25D366]" />
+                        <span className="text-sm font-semibold">Gratis</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Columna derecha - Formulario */}
-              <div className="relative">
-                <div className="bg-gradient-to-br from-[#2A2A2A] to-[#1A1A1A] rounded-3xl p-8 md:p-10 border-2 border-[#A8FF00]/40 shadow-2xl relative overflow-hidden">
-                  {/* Efectos de brillo */}
-                  <div className="absolute top-0 right-0 w-48 h-48 bg-[#A8FF00]/5 rounded-full blur-3xl"></div>
-                  <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#96E600]/5 rounded-full blur-3xl"></div>
-
-                  <div className="relative z-10">
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      {/* Tipo de cliente con íconos */}
-                      <div>
-                        <label className="block text-white font-bold text-lg mb-3">
-                          Tipo de cliente
-                        </label>
-                        <div className="grid grid-cols-2 gap-4">
-                          <button
-                            type="button"
-                            onClick={() => setFormData({ ...formData, tipoCliente: 'particular' })}
-                            className={`group relative p-5 rounded-2xl border-2 font-bold transition-all duration-300 overflow-hidden ${
-                              formData.tipoCliente === 'particular'
-                                ? 'border-[#A8FF00] bg-[#A8FF00]/20 text-[#A8FF00] shadow-lg shadow-[#A8FF00]/20'
-                                : 'border-gray-600 hover:border-[#A8FF00]/50 text-gray-300 hover:bg-[#A8FF00]/5'
-                            }`}
-                          >
-                            {formData.tipoCliente === 'particular' && (
-                              <div className="absolute inset-0 bg-gradient-to-br from-[#A8FF00]/10 to-transparent"></div>
-                            )}
-                            <div className="relative z-10 text-center">
-                              <div className="text-3xl mb-2">👤</div>
-                              <span>Particular</span>
-                            </div>
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => setFormData({ ...formData, tipoCliente: 'empresa' })}
-                            className={`group relative p-5 rounded-2xl border-2 font-bold transition-all duration-300 overflow-hidden ${
-                              formData.tipoCliente === 'empresa'
-                                ? 'border-[#A8FF00] bg-[#A8FF00]/20 text-[#A8FF00] shadow-lg shadow-[#A8FF00]/20'
-                                : 'border-gray-600 hover:border-[#A8FF00]/50 text-gray-300 hover:bg-[#A8FF00]/5'
-                            }`}
-                          >
-                            {formData.tipoCliente === 'empresa' && (
-                              <div className="absolute inset-0 bg-gradient-to-br from-[#A8FF00]/10 to-transparent"></div>
-                            )}
-                            <div className="relative z-10 text-center">
-                              <div className="text-3xl mb-2">🏢</div>
-                              <span>Empresa</span>
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Nombre */}
-                      <div>
-                        <label className="block text-white font-bold text-lg mb-3">
-                          Nombre completo
-                        </label>
-                        <div className="relative">
-                          <input
-                            type="text"
-                            required
-                            value={formData.nombre}
-                            onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
-                            placeholder="Juan Pérez"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Teléfono */}
-                      <div>
-                        <label className="block text-white font-bold text-lg mb-3">
-                          Teléfono
-                        </label>
-                        <div className="relative">
-                          <input
-                            type="tel"
-                            required
-                            value={formData.telefono}
-                            onChange={(e) => setFormData({ ...formData, telefono: e.target.value })}
-                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
-                            placeholder="600 123 456"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Email */}
-                      <div>
-                        <label className="block text-white font-bold text-lg mb-3">
-                          Email
-                        </label>
-                        <div className="relative">
-                          <input
-                            type="email"
-                            required
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
-                            placeholder="juan@email.com"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Código Postal */}
-                      <div>
-                        <label className="block text-white font-bold text-lg mb-3">
-                          Código Postal
-                        </label>
-                        <div className="relative">
-                          <input
-                            type="text"
-                            required
-                            value={formData.codigo_postal}
-                            onChange={(e) => setFormData({ ...formData, codigo_postal: e.target.value })}
-                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
-                            placeholder="28001"
-                          />
-                        </div>
-                      </div>
-
-                      {/* CUPS (opcional) */}
-                      <div>
-                        <label className="block text-white font-bold text-lg mb-3">
-                          CUPS <span className="text-gray-500 text-sm font-normal">(Opcional)</span>
-                        </label>
-                        <div className="relative">
-                          <input
-                            type="text"
-                            value={formData.cups}
-                            onChange={(e) => setFormData({ ...formData, cups: e.target.value })}
-                            className="w-full px-6 py-4 rounded-2xl border-2 border-gray-600 bg-[#1A1A1A]/80 backdrop-blur-sm text-white focus:border-[#A8FF00] focus:bg-[#1A1A1A] focus:outline-none focus:ring-4 focus:ring-[#A8FF00]/20 transition-all placeholder-gray-500 text-lg"
-                            placeholder="ES0021000000000000AA"
-                          />
-                          <p className="text-gray-500 text-xs mt-2">Lo encontrarás en tu factura</p>
-                        </div>
-                      </div>
-
-                      {/* Upload de factura mejorado */}
-                      <div>
-                        <label className="block text-white font-bold text-lg mb-3">
-                          Adjunta tu factura
-                        </label>
-                        <div className="relative">
-                          <input
-                            type="file"
-                            required
-                            onChange={handleFileChange}
-                            accept=".pdf,.jpg,.jpeg,.png"
-                            className="hidden"
-                            id="file-upload"
-                          />
-                          <label
-                            htmlFor="file-upload"
-                            className={`group relative flex items-center justify-center w-full px-6 py-8 rounded-2xl border-2 border-dashed cursor-pointer transition-all duration-300 ${
-                              file
-                                ? 'border-[#A8FF00] bg-[#A8FF00]/10'
-                                : 'border-gray-600 hover:border-[#A8FF00] bg-[#1A1A1A]/50 hover:bg-[#A8FF00]/5'
-                            }`}
-                          >
-                            {file ? (
-                              <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 rounded-2xl bg-[#A8FF00]/20 flex items-center justify-center">
-                                  <CheckCircle className="w-8 h-8 text-[#A8FF00]" />
-                                </div>
-                                <div className="text-left">
-                                  <p className="text-white font-bold text-lg">{file.name}</p>
-                                  <p className="text-[#A8FF00] text-sm">Archivo listo para enviar</p>
-                                </div>
-                              </div>
-                            ) : (
-                              <div className="text-center">
-                                <div className="w-16 h-16 rounded-2xl bg-[#A8FF00]/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-[#A8FF00]/20 transition-colors">
-                                  <Upload className="w-8 h-8 text-[#A8FF00] group-hover:scale-110 transition-transform" />
-                                </div>
-                                <p className="text-white font-bold text-lg mb-1">
-                                  Arrastra tu factura o haz clic aquí
-                                </p>
-                                <p className="text-gray-400 text-sm">
-                                  PDF, JPG o PNG · Máx. 10MB
-                                </p>
-                              </div>
-                            )}
-                          </label>
-                        </div>
-                      </div>
-
-                      {/* Error message */}
-                      {error && (
-                        <div className="bg-red-500/20 border border-red-500/50 rounded-2xl p-4">
-                          <p className="text-red-400 text-sm">{error}</p>
-                        </div>
-                      )}
-
-                      {/* Botón de envío mejorado */}
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="group relative w-full bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-8 py-5 rounded-2xl text-xl font-black hover:shadow-2xl hover:shadow-[#A8FF00]/60 transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none overflow-hidden mt-8"
-                      >
-                        <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-                        {isSubmitting ? (
-                          <span className="flex items-center justify-center gap-3 relative z-10">
-                            <div className="w-6 h-6 border-3 border-[#1A1A1A] border-t-transparent rounded-full animate-spin"></div>
-                            Enviando tu factura...
-                          </span>
-                        ) : (
-                          <span className="flex items-center justify-center gap-3 relative z-10">
-                            <Zap className="w-6 h-6" />
-                            Analizar mi factura gratis
-                            <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                          </span>
-                        )}
-                      </button>
-
-                      {/* Footer del formulario */}
-                      <p className="text-center text-gray-400 text-sm mt-4">
-                        Al enviar, aceptas que revisemos tu factura. No spam, lo prometemos.
-                      </p>
-                    </form>
-                  </div>
-                </div>
+              {/* Extra trust indicators */}
+              <div className="mt-8 text-center">
+                <p className="text-gray-400 text-lg mb-4">
+                  O si prefieres, llámanos directamente
+                </p>
+                <a
+                  href="tel:+34605667145"
+                  className="inline-flex items-center gap-3 bg-[#2A2A2A] hover:bg-[#3A3A3A] text-white px-8 py-4 rounded-full font-bold transition-all duration-300 border border-[#25D366]/30 hover:border-[#25D366]/60"
+                >
+                  <Phone className="w-5 h-5 text-[#25D366]" />
+                  <span>+34 605 66 71 45</span>
+                </a>
               </div>
             </div>
           </div>
@@ -1121,12 +925,16 @@ export default function SubirFactura() {
             </p>
 
             <a
-              href="#formulario"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-12 py-6 rounded-full text-2xl font-black hover:shadow-2xl hover:shadow-[#A8FF00]/50 transition-all duration-300 transform hover:scale-110 relative overflow-hidden"
+              href="https://wa.me/34610764494?text=Hola%20LuzIA!%20Quiero%20ver%20el%20mejor%20precio%20para%20mi%20factura%20de%20luz.%20Inf%C3%B3rmame%20por%20favor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-12 py-6 rounded-full text-2xl font-black hover:shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-300 transform hover:scale-110 relative overflow-hidden"
             >
               <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
-              <Upload className="w-7 h-7 relative z-10" />
-              <span className="relative z-10">Subir mi factura ahora</span>
+              <svg className="w-7 h-7 relative z-10" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
+              <span className="relative z-10">Chatear con LuzIA ahora</span>
               <ArrowRight className="w-7 h-7 relative z-10 group-hover:translate-x-1 transition-transform" />
             </a>
 
