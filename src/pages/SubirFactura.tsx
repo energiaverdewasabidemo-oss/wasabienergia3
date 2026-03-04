@@ -235,67 +235,6 @@ export default function SubirFactura() {
           </div>
         </div>
 
-        {/* Contador de cuenta regresiva */}
-        <div className="bg-gradient-to-br from-red-600/30 via-orange-600/30 to-red-600/30 border-2 border-red-500 rounded-3xl p-8 mb-16 text-center shadow-2xl shadow-red-500/30 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-20"></div>
-
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-3 bg-red-600/40 backdrop-blur-sm border border-red-400/50 rounded-full px-6 py-2 mb-6 animate-pulse">
-              <Clock className="w-5 h-5 text-red-200" />
-              <span className="text-red-100 font-bold text-sm uppercase tracking-wider">Oferta por tiempo limitado</span>
-            </div>
-
-            <h3 className="text-3xl md:text-4xl font-black text-white mb-3">
-              ¡Esta oferta termina en:
-            </h3>
-
-            <p className="text-lg text-red-100 mb-8 max-w-2xl mx-auto">
-              Después de este plazo, volveremos a nuestra tarifa estándar
-            </p>
-
-            <div className="flex justify-center gap-4 md:gap-8 mb-6">
-              <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[100px] border border-white/30 shadow-xl">
-                <div className="text-4xl md:text-6xl font-black text-white mb-2 tabular-nums">
-                  {String(timeLeft.days).padStart(2, '0')}
-                </div>
-                <div className="text-xs md:text-sm text-red-200 font-semibold uppercase tracking-wider">Días</div>
-              </div>
-
-              <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[100px] border border-white/30 shadow-xl">
-                <div className="text-4xl md:text-6xl font-black text-white mb-2 tabular-nums">
-                  {String(timeLeft.hours).padStart(2, '0')}
-                </div>
-                <div className="text-xs md:text-sm text-red-200 font-semibold uppercase tracking-wider">Horas</div>
-              </div>
-
-              <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[100px] border border-white/30 shadow-xl">
-                <div className="text-4xl md:text-6xl font-black text-white mb-2 tabular-nums">
-                  {String(timeLeft.minutes).padStart(2, '0')}
-                </div>
-                <div className="text-xs md:text-sm text-red-200 font-semibold uppercase tracking-wider">Min</div>
-              </div>
-
-              <div className="bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-xl rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[100px] border border-white/30 shadow-xl animate-pulse">
-                <div className="text-4xl md:text-6xl font-black text-white mb-2 tabular-nums">
-                  {String(timeLeft.seconds).padStart(2, '0')}
-                </div>
-                <div className="text-xs md:text-sm text-red-200 font-semibold uppercase tracking-wider">Seg</div>
-              </div>
-            </div>
-
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 max-w-2xl mx-auto">
-              <p className="text-white font-semibold text-lg mb-2">
-                🔥 Beneficios exclusivos de esta oferta:
-              </p>
-              <ul className="text-red-100 text-sm space-y-1">
-                <li>✓ Análisis gratuito en menos de 24 horas</li>
-                <li>✓ Atención prioritaria por WhatsApp</li>
-                <li>✓ Garantía de máximo ahorro o no te molestamos</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
         {/* Urgencia - Por qué ahora */}
         <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border-2 border-orange-500/50 rounded-3xl p-8 mb-16 text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -486,6 +425,78 @@ export default function SubirFactura() {
                 <h4 className="text-[#A8FF00] font-black text-xl mb-3">✓ 92% de éxito</h4>
                 <p className="text-gray-400">En más del 92% de casos encontramos ahorros significativos.</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Contador de cuenta regresiva - Reubicado estratégicamente */}
+        <div className="bg-gradient-to-br from-[#A8FF00]/20 via-[#96E600]/20 to-[#A8FF00]/20 border-4 border-[#A8FF00] rounded-3xl p-8 md:p-12 mb-16 text-center shadow-2xl shadow-[#A8FF00]/50 relative overflow-hidden animate-pulse">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAgTSAwIDIwIEwgNDAgMjAgTSAyMCAwIEwgMjAgNDAgTSAwIDMwIEwgNDAgMzAgTSAzMCAwIEwgMzAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-10"></div>
+
+          <div className="relative z-10">
+            <div className="inline-flex items-center gap-3 bg-[#A8FF00]/40 backdrop-blur-sm border-2 border-[#A8FF00] rounded-full px-8 py-3 mb-6 animate-bounce shadow-lg shadow-[#A8FF00]/50">
+              <Clock className="w-6 h-6 text-[#1A1A1A]" />
+              <span className="text-[#1A1A1A] font-black text-base uppercase tracking-wider">Oferta por tiempo limitado</span>
+            </div>
+
+            <h3 className="text-4xl md:text-5xl font-black text-white mb-4 drop-shadow-lg">
+              ⚡ ¡Esta oferta termina en: ⚡
+            </h3>
+
+            <p className="text-xl text-white mb-10 max-w-2xl mx-auto font-bold">
+              Después de este plazo, volveremos a nuestra tarifa estándar
+            </p>
+
+            <div className="flex justify-center gap-4 md:gap-8 mb-8">
+              <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-xl rounded-3xl p-6 md:p-8 min-w-[90px] md:min-w-[120px] border-4 border-[#A8FF00] shadow-2xl shadow-[#A8FF00]/60 hover:scale-110 transition-transform duration-300">
+                <div className="text-5xl md:text-7xl font-black text-[#A8FF00] mb-3 tabular-nums drop-shadow-lg">
+                  {String(timeLeft.days).padStart(2, '0')}
+                </div>
+                <div className="text-sm md:text-base text-white font-black uppercase tracking-wider">Días</div>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-xl rounded-3xl p-6 md:p-8 min-w-[90px] md:min-w-[120px] border-4 border-[#A8FF00] shadow-2xl shadow-[#A8FF00]/60 hover:scale-110 transition-transform duration-300">
+                <div className="text-5xl md:text-7xl font-black text-[#A8FF00] mb-3 tabular-nums drop-shadow-lg">
+                  {String(timeLeft.hours).padStart(2, '0')}
+                </div>
+                <div className="text-sm md:text-base text-white font-black uppercase tracking-wider">Horas</div>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-xl rounded-3xl p-6 md:p-8 min-w-[90px] md:min-w-[120px] border-4 border-[#A8FF00] shadow-2xl shadow-[#A8FF00]/60 hover:scale-110 transition-transform duration-300">
+                <div className="text-5xl md:text-7xl font-black text-[#A8FF00] mb-3 tabular-nums drop-shadow-lg">
+                  {String(timeLeft.minutes).padStart(2, '0')}
+                </div>
+                <div className="text-sm md:text-base text-white font-black uppercase tracking-wider">Min</div>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-xl rounded-3xl p-6 md:p-8 min-w-[90px] md:min-w-[120px] border-4 border-[#A8FF00] shadow-2xl shadow-[#A8FF00]/60 animate-pulse hover:scale-110 transition-transform duration-300">
+                <div className="text-5xl md:text-7xl font-black text-[#A8FF00] mb-3 tabular-nums drop-shadow-lg">
+                  {String(timeLeft.seconds).padStart(2, '0')}
+                </div>
+                <div className="text-sm md:text-base text-white font-black uppercase tracking-wider">Seg</div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-[#1A1A1A] to-[#2A2A2A] backdrop-blur-sm rounded-2xl p-6 max-w-3xl mx-auto border-2 border-[#A8FF00]">
+              <p className="text-white font-black text-xl mb-4">
+                🔥 Beneficios exclusivos de esta oferta:
+              </p>
+              <ul className="text-white text-base space-y-2 font-semibold">
+                <li>✓ Análisis gratuito en menos de 24 horas</li>
+                <li>✓ Atención prioritaria por WhatsApp</li>
+                <li>✓ Garantía de máximo ahorro o no te molestamos</li>
+              </ul>
+            </div>
+
+            <div className="mt-8">
+              <button
+                onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#A8FF00] to-[#96E600] text-[#1A1A1A] px-10 py-5 rounded-full text-xl font-black hover:shadow-2xl hover:shadow-[#A8FF00]/80 transition-all duration-300 transform hover:scale-110 relative overflow-hidden border-4 border-[#1A1A1A]"
+              >
+                <span className="absolute inset-0 bg-white/30 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
+                <span className="relative z-10">👉 Chatear con LuzIA AHORA</span>
+                <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
           </div>
         </div>
