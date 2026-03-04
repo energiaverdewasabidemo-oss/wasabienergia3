@@ -170,10 +170,8 @@ export default function SubirFactura() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-            <a
-              href="https://wa.me/34610764494?text=Hola%20LuzIA!%20Quiero%20ver%20el%20mejor%20precio%20para%20mi%20factura%20de%20luz.%20Inf%C3%B3rmame%20por%20favor"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={() => document.getElementById('formulario')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
               className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-10 py-5 rounded-full text-xl font-bold hover:shadow-2xl hover:shadow-[#25D366]/50 transition-all duration-300 transform hover:scale-110 relative overflow-hidden"
             >
               <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></span>
@@ -182,7 +180,7 @@ export default function SubirFactura() {
               </svg>
               <span className="relative z-10">Chatear con LuzIA</span>
               <ArrowRight className="w-6 h-6 relative z-10 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
           </div>
 
           {/* Trust badges */}
