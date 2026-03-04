@@ -501,11 +501,11 @@ export default function SubirFactura() {
                   O si prefieres, llámanos directamente
                 </p>
                 <a
-                  href="tel:+34605667145"
+                  href="tel:+34621508300"
                   className="inline-flex items-center gap-3 bg-[#2A2A2A] hover:bg-[#3A3A3A] text-white px-8 py-4 rounded-full font-bold transition-all duration-300 border border-[#25D366]/30 hover:border-[#25D366]/60"
                 >
                   <Phone className="w-5 h-5 text-[#25D366]" />
-                  <span>+34 605 66 71 45</span>
+                  <span>+34 621 50 83 00</span>
                 </a>
               </div>
             </div>
@@ -814,8 +814,8 @@ export default function SubirFactura() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-gray-500">📞</span>
-                  <a href="tel:+34605667145" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
-                    +34 605 66 71 45
+                  <a href="tel:+34621508300" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                    +34 621 50 83 00
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
@@ -845,8 +845,8 @@ export default function SubirFactura() {
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="text-gray-500">📞</span>
-                  <a href="tel:+34605667145" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
-                    +34 605 66 71 45
+                  <a href="tel:+34621508300" className="text-[#A8FF00] font-semibold hover:text-[#96E600] transition-colors">
+                    +34 621 50 83 00
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
