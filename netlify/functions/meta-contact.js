@@ -13,7 +13,12 @@ exports.handler = async function (event, context) {
     return { statusCode: 400, body: "Invalid JSON" };
   }
 
-  const { eventSourceUrl, clientIpAddress, clientUserAgent, fbp, fbc } = body;
+  const { eventSourceUrl, clientUserAgent, fbp, fbc } = body;
+
+  // Capturar IP real desde headers de Netlify
+  const clientIp = event.headers["x-forwarded-for"]?.split(",")[0].trim() 
+    || event.headers["client-ip"] 
+    || null;
 
   const payload = {
     data: [
@@ -23,7 +28,7 @@ exports.handler = async function (event, context) {
         action_source: "website",
         event_source_url: eventSourceUrl || "https://wasabienergia.es",
         user_data: {
-          client_ip_address: clientIpAddress || null,
+          client_ip_address: clientIp,
           client_user_agent: clientUserAgent || null,
           fbp: fbp || null,
           fbc: fbc || null,
