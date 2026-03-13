@@ -114,5 +114,24 @@
     </script>
     
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+  document.addEventListener("click", function (e) {
+    const link = e.target.closest("a");
+    if (!link) return;
+    const href = link.href || "";
+    if (!href.startsWith("tel:") && !href.startsWith("https://wa.me") && !href.includes("whatsapp")) return;
+
+    fetch("/.netlify/functions/meta-contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        eventSourceUrl: window.location.href,
+        clientUserAgent: navigator.userAgent,
+        fbp: document.cookie.match(/_fbp=([^;]+)/)?.[1] || null,
+        fbc: document.cookie.match(/_fbc=([^;]+)/)?.[1] || null,
+      }),
+    });
+  });
+</script>
   </body>
 </html>
