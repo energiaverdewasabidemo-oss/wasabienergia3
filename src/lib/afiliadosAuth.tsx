@@ -38,11 +38,11 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
   };
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
       if (session?.user) {
-        fetchAfiliado(session.user.id);
+        await fetchAfiliado(session.user.id);
       }
       setLoading(false);
     });
@@ -51,13 +51,15 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
       setSession(session);
       setUser(session?.user ?? null);
       if (session?.user) {
+        setLoading(true);
         (async () => {
           await fetchAfiliado(session.user.id);
+          setLoading(false);
         })();
       } else {
         setAfiliado(null);
+        setLoading(false);
       }
-      setLoading(false);
     });
 
     return () => subscription.unsubscribe();
