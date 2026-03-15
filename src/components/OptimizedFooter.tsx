@@ -156,6 +156,7 @@ const OptimizedFooter = () => {
             <div className="space-y-4">
               {[
                 { name: 'Subir Factura', href: '/subir-factura', external: false },
+                { name: 'Panel de Afiliados', href: '/afiliados', external: false },
                 { name: 'Política de Privacidad', href: '/politica-privacidad.html', external: true },
                 { name: 'Aviso Legal', href: '/aviso-legal.html', external: true },
                 { name: 'Términos y Condiciones', href: '/terminos-condiciones.html', external: true },
