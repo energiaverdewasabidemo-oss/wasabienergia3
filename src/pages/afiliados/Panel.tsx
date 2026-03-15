@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import {
   Zap, Copy, CheckCheck, LogOut, Users, Home, Briefcase,
-  TrendingUp, Euro, Calendar, ChevronRight, Award
+  TrendingUp, Euro, Calendar, AlertCircle, Award
 } from 'lucide-react';
 import { useAfiliadosAuth } from '../../lib/afiliadosAuth';
 import { supabase } from '../../lib/supabase';
@@ -82,8 +82,28 @@ const AfiliadosPanel = () => {
     );
   }
 
-  if (!user || !afiliado) {
+  if (!user) {
     return <Navigate to="/afiliados/login" replace />;
+  }
+
+  if (!afiliado) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-[#1A1A1A] via-[#222] to-[#1A1A1A] flex items-center justify-center px-4">
+        <div className="text-center max-w-md">
+          <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-6 border border-red-500/40">
+            <AlertCircle className="h-10 w-10 text-red-400" />
+          </div>
+          <h2 className="text-2xl font-black text-white mb-3">Perfil no encontrado</h2>
+          <p className="text-gray-400 mb-6">No se pudo cargar tu perfil de afiliado. Por favor, contacta con soporte.</p>
+          <button
+            onClick={signOut}
+            className="bg-[#A8FF00] text-[#1A1A1A] px-6 py-3 rounded-xl font-bold hover:bg-[#96E600] transition-colors"
+          >
+            Volver al login
+          </button>
+        </div>
+      </div>
+    );
   }
 
   const now = new Date();

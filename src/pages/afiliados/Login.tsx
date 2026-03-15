@@ -22,11 +22,16 @@ const AfiliadosLogin = () => {
     e.preventDefault();
     setError('');
     setLoading(true);
+
     const { error } = await signIn(email, password);
+
     if (error) {
-      setError('Email o contraseña incorrectos.');
+      setError(error);
       setLoading(false);
+      return;
     }
+
+    navigate('/afiliados', { replace: true });
   };
 
   return (

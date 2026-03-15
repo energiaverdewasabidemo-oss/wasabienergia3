@@ -22,19 +22,40 @@ interface AfiliadosAuthContextType {
 
 const AfiliadosAuthContext = createContext<AfiliadosAuthContextType | null>(null);
 
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
 export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [afiliado, setAfiliado] = useState<Afiliado | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchAfiliado = async (userId: string) => {
-    const { data } = await supabase
-      .from('afiliados')
-      .select('*')
-      .eq('id', userId)
-      .maybeSingle();
-    setAfiliado(data);
+  const fetchAfiliadoWithRetry = async (userId: string, maxRetries = 3): Promise<Afiliado | null> => {
+    for (let i = 0; i < maxRetries; i++) {
+      const { data, error } = await supabase
+        .from('afiliados')
+        .select('*')
+        .eq('id', userId)
+        .maybeSingle();
+
+      if (error) {
+        console.error('Error fetching afiliado:', error);
+        if (i < maxRetries - 1) {
+          await sleep(1000);
+          continue;
+        }
+        return null;
+      }
+
+      if (data) {
+        return data as Afiliado;
+      }
+
+      if (i < maxRetries - 1) {
+        await sleep(1000);
+      }
+    }
+    return null;
   };
 
   useEffect(() => {
@@ -42,20 +63,21 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
       setSession(session);
       setUser(session?.user ?? null);
       if (session?.user) {
-        await fetchAfiliado(session.user.id);
+        const afiliadoData = await fetchAfiliadoWithRetry(session.user.id);
+        setAfiliado(afiliadoData);
       }
       setLoading(false);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
       setSession(session);
       setUser(session?.user ?? null);
+
       if (session?.user) {
         setLoading(true);
-        (async () => {
-          await fetchAfiliado(session.user.id);
-          setLoading(false);
-        })();
+        const afiliadoData = await fetchAfiliadoWithRetry(session.user.id);
+        setAfiliado(afiliadoData);
+        setLoading(false);
       } else {
         setAfiliado(null);
         setLoading(false);
@@ -66,12 +88,8 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
-      if (error.message === 'Email not confirmed') {
-        if (data?.session) return { error: null };
-        return { error: null };
-      }
       return { error: error.message };
     }
     return { error: null };
@@ -99,10 +117,10 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
     if (authError) return { error: authError.message };
     if (!authData.user) return { error: 'Error al crear el usuario.' };
 
-    if (!authData.session) {
-      const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
-      if (signInError) return { error: signInError.message };
-    }
+    await sleep(1500);
+
+    const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+    if (signInError) return { error: signInError.message };
 
     return { error: null };
   };

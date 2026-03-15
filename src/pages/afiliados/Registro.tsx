@@ -37,13 +37,15 @@ const AfiliadosRegistro = () => {
 
     setLoading(true);
     const { error } = await signUp(form.email, form.password, form.nombre, form.ref);
+
     if (error) {
       setError(error);
-    } else {
-      setSuccess(true);
-      setTimeout(() => navigate('/afiliados'), 2000);
+      setLoading(false);
+      return;
     }
-    setLoading(false);
+
+    setSuccess(true);
+    setTimeout(() => navigate('/afiliados', { replace: true }), 2000);
   };
 
   if (success) {
