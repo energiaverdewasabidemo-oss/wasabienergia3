@@ -69,19 +69,21 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
       setLoading(false);
     });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      setSession(session);
-      setUser(session?.user ?? null);
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+      (async () => {
+        setSession(session);
+        setUser(session?.user ?? null);
 
-      if (session?.user) {
-        setLoading(true);
-        const afiliadoData = await fetchAfiliadoWithRetry(session.user.id);
-        setAfiliado(afiliadoData);
-        setLoading(false);
-      } else {
-        setAfiliado(null);
-        setLoading(false);
-      }
+        if (session?.user) {
+          setLoading(true);
+          const afiliadoData = await fetchAfiliadoWithRetry(session.user.id);
+          setAfiliado(afiliadoData);
+          setLoading(false);
+        } else {
+          setAfiliado(null);
+          setLoading(false);
+        }
+      })();
     });
 
     return () => subscription.unsubscribe();
