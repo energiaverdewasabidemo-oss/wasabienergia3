@@ -86,6 +86,11 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
     if (authError) return { error: authError.message };
     if (!authData.user) return { error: 'Error al crear el usuario.' };
 
+    if (!authData.session) {
+      const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+      if (signInError) return { error: signInError.message };
+    }
+
     const { error: insertError } = await supabase.from('afiliados').insert({
       id: authData.user.id,
       email,
