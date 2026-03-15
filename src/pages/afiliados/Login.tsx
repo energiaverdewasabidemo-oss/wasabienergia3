@@ -57,15 +57,15 @@ const AfiliadosLogin = () => {
 
             <div>
               <label className="block text-sm font-semibold text-gray-300 mb-2">Email</label>
-              <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
+              <div className="flex items-center bg-[#1A1A1A] border border-gray-600 rounded-xl focus-within:border-[#A8FF00] focus-within:ring-1 focus-within:ring-[#A8FF00]/50 transition-colors">
+                <Mail className="ml-4 flex-shrink-0 h-5 w-5 text-gray-500" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-11 pr-4 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors [&:-webkit-autofill]:bg-[#1A1A1A] [&:-webkit-autofill]:[transition:background-color_5000s_ease-in-out_0s]"
+                  className="flex-1 bg-transparent px-3 py-3 text-white placeholder-gray-500 focus:outline-none"
                   style={{ WebkitBoxShadow: '0 0 0 1000px #1A1A1A inset', WebkitTextFillColor: 'white' }}
                 />
               </div>
@@ -73,21 +73,21 @@ const AfiliadosLogin = () => {
 
             <div>
               <label className="block text-sm font-semibold text-gray-300 mb-2">Contraseña</label>
-              <div className="relative">
-                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
+              <div className="flex items-center bg-[#1A1A1A] border border-gray-600 rounded-xl focus-within:border-[#A8FF00] focus-within:ring-1 focus-within:ring-[#A8FF00]/50 transition-colors">
+                <Lock className="ml-4 flex-shrink-0 h-5 w-5 text-gray-500" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   required
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-11 pr-12 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors [&:-webkit-autofill]:bg-[#1A1A1A] [&:-webkit-autofill]:[transition:background-color_5000s_ease-in-out_0s]"
+                  className="flex-1 bg-transparent px-3 py-3 text-white placeholder-gray-500 focus:outline-none"
                   style={{ WebkitBoxShadow: '0 0 0 1000px #1A1A1A inset', WebkitTextFillColor: 'white' }}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors"
+                  className="mr-4 flex-shrink-0 text-gray-500 hover:text-gray-300 transition-colors"
                 >
                   {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
