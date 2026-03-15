@@ -65,7 +65,8 @@ const AfiliadosLogin = () => {
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                   placeholder="tu@email.com"
-                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-12 pr-4 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors"
+                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-11 pr-4 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors [&:-webkit-autofill]:bg-[#1A1A1A] [&:-webkit-autofill]:[transition:background-color_5000s_ease-in-out_0s]"
+                  style={{ WebkitBoxShadow: '0 0 0 1000px #1A1A1A inset', WebkitTextFillColor: 'white' }}
                 />
               </div>
             </div>
@@ -80,7 +81,8 @@ const AfiliadosLogin = () => {
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-12 pr-12 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors"
+                  className="w-full bg-[#1A1A1A] border border-gray-600 rounded-xl pl-11 pr-12 py-3 text-white placeholder-gray-500 focus:border-[#A8FF00] focus:outline-none focus:ring-1 focus:ring-[#A8FF00]/50 transition-colors [&:-webkit-autofill]:bg-[#1A1A1A] [&:-webkit-autofill]:[transition:background-color_5000s_ease-in-out_0s]"
+                  style={{ WebkitBoxShadow: '0 0 0 1000px #1A1A1A inset', WebkitTextFillColor: 'white' }}
                 />
                 <button
                   type="button"
