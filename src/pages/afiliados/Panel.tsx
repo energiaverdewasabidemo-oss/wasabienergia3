@@ -56,7 +56,7 @@ const AfiliadosPanel = () => {
     const fetchLeads = async () => {
       setLeadsLoading(true);
       const { data } = await supabase
-        .from('leads')
+        .from('affiliate_leads')
         .select('*')
         .eq('ref', afiliado.ref)
         .order('fecha', { ascending: false });
