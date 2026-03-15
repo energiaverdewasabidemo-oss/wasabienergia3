@@ -112,6 +112,7 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
       email,
       password,
       options: {
+        emailRedirectTo: window.location.origin + '/afiliados/panel',
         data: { nombre, ref: cleanRef },
       },
     });
@@ -119,10 +120,45 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
     if (authError) return { error: authError.message };
     if (!authData.user) return { error: 'Error al crear el usuario.' };
 
+    if (authData.session) {
+      await sleep(500);
+      const { data: afiliadoCheck } = await supabase
+        .from('afiliados')
+        .select('id')
+        .eq('id', authData.user.id)
+        .maybeSingle();
+
+      if (!afiliadoCheck) {
+        await supabase.from('afiliados').insert({
+          id: authData.user.id,
+          email: authData.user.email!,
+          nombre,
+          ref: cleanRef,
+        });
+      }
+      return { error: null };
+    }
+
     await sleep(1500);
 
     const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
     if (signInError) return { error: signInError.message };
+
+    await sleep(500);
+    const { data: afiliadoCheck2 } = await supabase
+      .from('afiliados')
+      .select('id')
+      .eq('id', authData.user.id)
+      .maybeSingle();
+
+    if (!afiliadoCheck2) {
+      await supabase.from('afiliados').insert({
+        id: authData.user.id,
+        email: authData.user.email!,
+        nombre,
+        ref: cleanRef,
+      });
+    }
 
     return { error: null };
   };
