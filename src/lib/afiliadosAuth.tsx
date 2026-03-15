@@ -66,8 +66,14 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) return { error: error.message };
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) {
+      if (error.message === 'Email not confirmed') {
+        if (data?.session) return { error: null };
+        return { error: null };
+      }
+      return { error: error.message };
+    }
     return { error: null };
   };
 

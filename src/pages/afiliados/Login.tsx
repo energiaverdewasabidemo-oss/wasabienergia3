@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Zap, Mail, Lock, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import { useAfiliadosAuth } from '../../lib/afiliadosAuth';
 
 const AfiliadosLogin = () => {
-  const { signIn } = useAfiliadosAuth();
+  const { signIn, user } = useAfiliadosAuth();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (user) {
+      navigate('/afiliados', { replace: true });
+    }
+  }, [user, navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,10 +25,8 @@ const AfiliadosLogin = () => {
     const { error } = await signIn(email, password);
     if (error) {
       setError('Email o contraseña incorrectos.');
-    } else {
-      navigate('/afiliados');
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
