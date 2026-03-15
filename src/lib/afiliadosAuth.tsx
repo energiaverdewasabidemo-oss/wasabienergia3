@@ -82,7 +82,14 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
 
     if (existing) return { error: 'Este código de afiliado ya está en uso.' };
 
-    const { data: authData, error: authError } = await supabase.auth.signUp({ email, password });
+    const { data: authData, error: authError } = await supabase.auth.signUp({
+      email,
+      password,
+      options: {
+        data: { nombre, ref: cleanRef },
+      },
+    });
+
     if (authError) return { error: authError.message };
     if (!authData.user) return { error: 'Error al crear el usuario.' };
 
@@ -91,28 +98,6 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
       if (signInError) return { error: signInError.message };
     }
 
-    const insertPayload = {
-      id: authData.user.id,
-      email,
-      nombre,
-      ref: cleanRef,
-    };
-
-    console.log('[afiliados] Intentando insert en tabla afiliados:', insertPayload);
-    console.log('[afiliados] User ID:', authData.user.id);
-    console.log('[afiliados] Session activa:', !!(await supabase.auth.getSession()).data.session);
-
-    const { data: insertData, error: insertError } = await supabase
-      .from('afiliados')
-      .insert(insertPayload)
-      .select();
-
-    console.log('[afiliados] Resultado insert - data:', insertData, '| error:', insertError);
-
-    if (insertError) {
-      console.error('[afiliados] ERROR COMPLETO:', JSON.stringify(insertError, null, 2));
-      return { error: `Insert fallido: ${insertError.message} (code: ${insertError.code}, details: ${insertError.details}, hint: ${insertError.hint})` };
-    }
     return { error: null };
   };
 
