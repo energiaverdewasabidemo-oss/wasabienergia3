@@ -30,29 +30,37 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
   const [session, setSession] = useState<Session | null>(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchAfiliadoWithRetry = async (userId: string, maxRetries = 3): Promise<Afiliado | null> => {
+  const fetchAfiliadoWithRetry = async (userId: string, maxRetries = 5): Promise<Afiliado | null> => {
     for (let i = 0; i < maxRetries; i++) {
-      const { data, error } = await supabase
-        .from('afiliados')
-        .select('*')
-        .eq('id', userId)
-        .maybeSingle();
+      try {
+        const { data, error } = await supabase
+          .from('afiliados')
+          .select('*')
+          .eq('id', userId)
+          .limit(1);
 
-      if (error) {
-        console.error('Error fetching afiliado:', error);
+        if (error) {
+          console.error(`Error fetching afiliado (intento ${i + 1}/${maxRetries}):`, error.message);
+          if (i < maxRetries - 1) {
+            await sleep(1500 * (i + 1));
+            continue;
+          }
+          return null;
+        }
+
+        if (data && data.length > 0) {
+          return data[0] as Afiliado;
+        }
+
         if (i < maxRetries - 1) {
-          await sleep(1000);
+          await sleep(1500 * (i + 1));
+        }
+      } catch (err: any) {
+        console.error(`Exception fetching afiliado (intento ${i + 1}/${maxRetries}):`, err?.message || err);
+        if (i < maxRetries - 1) {
+          await sleep(1500 * (i + 1));
           continue;
         }
-        return null;
-      }
-
-      if (data) {
-        return data as Afiliado;
-      }
-
-      if (i < maxRetries - 1) {
-        await sleep(1000);
       }
     }
     return null;
@@ -90,10 +98,36 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    const { data: authData, error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
-      return { error: error.message };
+      return { error: 'Email o contraseña incorrectos' };
     }
+
+    if (authData.user) {
+      await sleep(500);
+      const { data: existingAfiliado } = await supabase
+        .from('afiliados')
+        .select('id')
+        .eq('id', authData.user.id)
+        .limit(1);
+
+      if (!existingAfiliado || existingAfiliado.length === 0) {
+        const nombre = authData.user.user_metadata?.nombre || authData.user.email?.split('@')[0] || 'Usuario';
+        const ref = authData.user.user_metadata?.ref || authData.user.id.substring(0, 8).toUpperCase();
+
+        try {
+          await supabase.from('afiliados').insert({
+            id: authData.user.id,
+            email: authData.user.email!,
+            nombre,
+            ref,
+          });
+        } catch (insertError) {
+          console.error('Error creating afiliado record:', insertError);
+        }
+      }
+    }
+
     return { error: null };
   };
 
@@ -104,9 +138,9 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
       .from('afiliados')
       .select('id')
       .eq('ref', cleanRef)
-      .maybeSingle();
+      .limit(1);
 
-    if (existing) return { error: 'Este código de afiliado ya está en uso.' };
+    if (existing && existing.length > 0) return { error: 'Este código de afiliado ya está en uso.' };
 
     const { data: authData, error: authError } = await supabase.auth.signUp({
       email,
@@ -126,9 +160,9 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
         .from('afiliados')
         .select('id')
         .eq('id', authData.user.id)
-        .maybeSingle();
+        .limit(1);
 
-      if (!afiliadoCheck) {
+      if (!afiliadoCheck || afiliadoCheck.length === 0) {
         await supabase.from('afiliados').insert({
           id: authData.user.id,
           email: authData.user.email!,
@@ -149,9 +183,9 @@ export const AfiliadosAuthProvider = ({ children }: { children: React.ReactNode 
       .from('afiliados')
       .select('id')
       .eq('id', authData.user.id)
-      .maybeSingle();
+      .limit(1);
 
-    if (!afiliadoCheck2) {
+    if (!afiliadoCheck2 || afiliadoCheck2.length === 0) {
       await supabase.from('afiliados').insert({
         id: authData.user.id,
         email: authData.user.email!,
